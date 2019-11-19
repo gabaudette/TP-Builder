@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TPBuilder
 {
-    abstract class Aircraft{
-        public string AircraftName { get; set; }
+    public abstract class Aircraft
+    {
+        public string Name { get; protected set; }
+        public Aircraft(string name)
+        {
+            this.Name = name;
+        }
     }
 }
