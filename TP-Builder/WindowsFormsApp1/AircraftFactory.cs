@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace TPBuilder
 {
-    class AircraftFactory
+    public sealed class AircraftFactory
     {
-        AircraftFactory aircraftFactory;
+        private static AircraftFactory aircraftFactory;
 
-        private AircraftFactory()
+        private AircraftFactory(){}
+
+        public static AircraftFactory GetAircraftFactory()
         {
-
+            if (aircraftFactory == null)
+                aircraftFactory = new AircraftFactory();
+            return aircraftFactory;
         }
-        
     }
 }
