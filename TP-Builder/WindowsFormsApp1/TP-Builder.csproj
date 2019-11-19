@@ -57,8 +57,14 @@
     <Compile Include="BuilderGUI.Designer.cs">
       <DependentUpon>BuilderGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargoPlane.cs" />
+    <Compile Include="ObserverPlane.cs" />
+    <Compile Include="PassengerAircraft.cs" />
+    <Compile Include="PassengerPlane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RescueHelicopter.cs" />
+    <Compile Include="WaterBomber.cs" />
     <EmbeddedResource Include="BuilderGUI.resx">
       <DependentUpon>BuilderGUI.cs</DependentUpon>
     </EmbeddedResource>
