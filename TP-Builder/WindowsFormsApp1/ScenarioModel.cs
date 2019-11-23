@@ -59,9 +59,16 @@ namespace TPBuilder
    
         }
 
-        public void DeleteAircraft()
+        public void DeleteAircraft(int index)
         {
-
+            try
+            {
+                Aircrafts.RemoveAt(index);
+            }
+            catch (System.ArgumentOutOfRangeException outOfRange)
+            {
+                System.Console.WriteLine("Error: " + index + "is out of range", outOfRange.Message);
+            }
         }
     }
 }
