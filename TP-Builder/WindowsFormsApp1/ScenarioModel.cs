@@ -21,8 +21,7 @@ namespace TPBuilder
                 return instance;
             }
         }
-
-        public void CreateAirport()
+        public void AddAircraft()
         {
 
         }

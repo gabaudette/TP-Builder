@@ -12,5 +12,11 @@
                 aircraftFactory = new AircraftFactory();
             return aircraftFactory;
         }
+
+        public Aircraft CreateAircraft(//type?)
+        {
+
+            return null;
+        }
     }
 }
