@@ -32,14 +32,21 @@ namespace TPBuilder
            Aircrafts.Add(aircraft);
         }
 
-        public void UpdateAirport()
+        public void UpdateAirport(int index)
         {
-
+           
         }
 
-        public void DeleteAirport()
+        public void DeleteAirport(int index)
         {
-
+            try
+            {
+                Airports.RemoveAt(index);
+            }
+            catch (System.ArgumentOutOfRangeException outOfRange)
+            {
+                System.Console.WriteLine("Error: " + index + "is out of range", outOfRange.Message);      
+            }
         }
 
         public void CreateAircraft()
