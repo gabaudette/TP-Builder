@@ -24,10 +24,12 @@ namespace TPBuilder
                 return instance;
             }
         }
+        // TODO : Aircraft Type ?
         public void AddAircraft()
         {
            aircraftFactory =  AircraftFactory.GetAircraftFactory();
-           aircraftFactory.CreateAircraft();
+           Aircraft aircraft = aircraftFactory.CreateAircraft();
+           Aircrafts.Add(aircraft);
         }
 
         public void UpdateAirport()
