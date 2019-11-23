@@ -5,8 +5,11 @@ namespace TPBuilder
     public sealed class ScenarioModel
     {
         private static ScenarioModel instance = null;
+        private AircraftFactory aircraftFactory;
+
         public List<Aircraft> Aircrafts { get; private set; }
         public List<Airport> Airports { get; private set; }
+       
 
         private ScenarioModel(){}
 
@@ -23,7 +26,8 @@ namespace TPBuilder
         }
         public void AddAircraft()
         {
-
+           aircraftFactory =  AircraftFactory.GetAircraftFactory();
+           aircraftFactory.CreateAircraft();
         }
 
         public void UpdateAirport()
