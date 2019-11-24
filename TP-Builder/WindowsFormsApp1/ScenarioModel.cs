@@ -6,6 +6,7 @@ namespace TPBuilder
     {
         private static ScenarioModel instance = null;
         private AircraftFactory aircraftFactory;
+        private Airport airport;
 
         public List<Aircraft> Aircrafts { get; private set; }
         public List<Airport> Airports { get; private set; }
@@ -24,14 +25,15 @@ namespace TPBuilder
                 return instance;
             }
         }
-        // TODO : Aircraft Type ?
-        public void AddAircraft()
+    
+        public void CreateAiport(string name)
         {
-           aircraftFactory =  AircraftFactory.GetAircraftFactory();
-           Aircraft aircraft = aircraftFactory.CreateAircraft();
-           Aircrafts.Add(aircraft);
+            if (ValidAirport(name))
+            {
+                Airports.Add(new Airport(name));
+            }
         }
-
+      
         public void UpdateAirport(int index)
         {
            
@@ -49,9 +51,20 @@ namespace TPBuilder
             }
         }
 
-        public void CreateAircraft()
+        public bool ValidAirport(string name)
         {
+            foreach (Airport airport in Airports)
+                if (airport.Name == name)
+                    return false;
+            return true;
+        }
 
+        // TODO : Aircraft Type ?
+        public void AddAircraft()
+        {
+            aircraftFactory = AircraftFactory.GetAircraftFactory();
+            Aircraft aircraft = aircraftFactory.CreateAircraft();
+            Aircrafts.Add(aircraft);
         }
 
         public void UpdateAircraft()
