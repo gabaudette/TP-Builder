@@ -12,9 +12,11 @@ namespace TPBuilder
 {
     public partial class BuilderGUI : Form
     {
+        ScenarioModel scenarioModel;
         public BuilderGUI()
         {
             InitializeComponent();
+            scenarioModel = ScenarioModel.Instance;
         }
 
         private void BuilderGUI_Load(object sender, EventArgs e)
