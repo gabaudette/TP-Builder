@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TPBuilder
+﻿namespace TPBuilder
 {
     public class Airport
     {
+        public string Name { get; private set; }
+
+        public Airport()
+        {
+
+        }
+        public Airport(string name)
+        {
+            this.Name = name;
+        }
     }
 }
