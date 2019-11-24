@@ -26,11 +26,21 @@ namespace TPBuilder
             }
         }
     
-        public void CreateAiport(string name)
+        public void CreateAiport(string name, int x , int y)
         {
-            if (ValidAirport(name))
+            if (ValidAirport(name)) { 
+                if (ValidAirportPostion(x, y)) { 
+                    Airports.Add(new Airport(name));
+                    System.Console.WriteLine($"Airport <{name}> added at {x}, {y}");
+                }
+                else
+                {
+                    System.Console.WriteLine($"Error : {x}, {y} are not valid positions ");
+                }
+            }
+            else 
             {
-                Airports.Add(new Airport(name));
+                System.Console.WriteLine($"Error : Airport : {name} already exist!");
             }
         }
       
@@ -47,7 +57,7 @@ namespace TPBuilder
             }
             catch (System.ArgumentOutOfRangeException outOfRange)
             {
-                System.Console.WriteLine("Error: " + index + "is out of range", outOfRange.Message);      
+                System.Console.WriteLine($"Error: {index} is out of range {outOfRange.Message}");      
             }
         }
 
@@ -56,6 +66,11 @@ namespace TPBuilder
             foreach (Airport airport in Airports)
                 if (airport.Name == name)
                     return false;
+            return true;
+        }
+
+        public bool ValidAirportPostion(int x, int y)
+        {
             return true;
         }
 
