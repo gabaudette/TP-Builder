@@ -15,7 +15,6 @@
         //type?
         public Aircraft CreateAircraft()
         {
-
             return null;
         }
     }
