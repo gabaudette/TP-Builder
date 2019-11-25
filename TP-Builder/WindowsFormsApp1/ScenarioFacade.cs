@@ -10,9 +10,12 @@ namespace TPBuilder
 
         public List<Aircraft> Aircrafts { get; private set; }
         public List<Airport> Airports { get; private set; }
-       
 
-        private ScenarioFacade(){}
+
+        private ScenarioFacade()
+        {
+            this.Airports = new List<Airport>();
+        }
 
         public static ScenarioFacade Instance
         {
@@ -25,11 +28,14 @@ namespace TPBuilder
                 return instance;
             }
         }
-    
-        public void CreateAiport(string name, int x , int y)
+
+        public void CreateAiport(string name, int x, int y)
         {
-            if (ValidAirport(name)) { 
-                if (ValidAirportPostion(x, y)) { 
+
+            if (ValidAirport(name))
+            {
+                if (ValidAirportPostion(x, y))
+                {
                     Airports.Add(new Airport(name));
                     System.Console.WriteLine($"Airport <{name}> added at {x}, {y}");
                 }
@@ -38,12 +44,12 @@ namespace TPBuilder
                     System.Console.WriteLine($"Error : {x}, {y} are not valid positions ");
                 }
             }
-            else 
+            else
             {
                 System.Console.WriteLine($"Error : Airport : {name} already exist!");
             }
         }
-      
+    
         public void UpdateAirport(int index)
         {
            
@@ -63,9 +69,11 @@ namespace TPBuilder
 
         public bool ValidAirport(string name)
         {
+            if (Airports.Count > 0) {
             foreach (Airport airport in Airports)
                 if (airport.Name == name)
                     return false;
+            }
             return true;
         }
 
