@@ -6,11 +6,11 @@ namespace TPBuilder
 {
     public partial class BuilderGUI : Form
     {
-        ScenarioModel scenarioModel;
+        ScenarioFacade scenarioFacade;
         public BuilderGUI()
         {
             InitializeComponent();
-            scenarioModel = ScenarioModel.Instance;
+            scenarioFacade = ScenarioFacade.Instance;
         }
 
         private void BuilderGUI_Load(object sender, EventArgs e)
@@ -22,9 +22,9 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
+                scenarioFacade.CreateAiport(tbAirportName.Text, Convert.ToInt32(tbAirportPositionX.Text), Convert.ToInt32(tbAirportPositionY.Text));
                 Console.WriteLine($"Airport: {tbAirportName.Text} at Position: (X: {tbAirportPositionX.Text}, Y: {tbAirportPositionY.Text}) added");
-                scenarioModel.CreateAiport(tbAirportName.Text, tbAirportPositionX.Text.ToString(), tbAirportPositionY);
-                resetAirportControls();
+                ResetAirportControls();
             }
         }
 
@@ -73,7 +73,7 @@ namespace TPBuilder
             return true;
         }
         
-        private void resetAirportControls()
+        private void ResetAirportControls()
         {
             tbAirportName.Clear();
             tbAirportPositionX.Clear();

@@ -2,9 +2,9 @@
 
 namespace TPBuilder
 {
-    public sealed class ScenarioModel
+    public sealed class ScenarioFacade
     {
-        private static ScenarioModel instance = null;
+        private static ScenarioFacade instance = null;
         private AircraftFactory aircraftFactory;
         //private Airport airport;
 
@@ -12,15 +12,15 @@ namespace TPBuilder
         public List<Airport> Airports { get; private set; }
        
 
-        private ScenarioModel(){}
+        private ScenarioFacade(){}
 
-        public static ScenarioModel Instance
+        public static ScenarioFacade Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new ScenarioModel();
+                    instance = new ScenarioFacade();
                 }
                 return instance;
             }
