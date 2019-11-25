@@ -23,6 +23,7 @@ namespace TPBuilder
             if (ValidateAirportInput())
             {
                 Console.WriteLine($"Airport: {tbAirportName.Text} at Position: (X: {tbAirportPositionX.Text}, Y: {tbAirportPositionY.Text}) added");
+                scenarioModel.CreateAiport(tbAirportName.Text, tbAirportPositionX.Text.ToString(), tbAirportPositionY);
                 resetAirportControls();
             }
         }
