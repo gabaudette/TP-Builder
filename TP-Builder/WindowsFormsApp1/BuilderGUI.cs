@@ -6,7 +6,9 @@ namespace TPBuilder
 {
     public partial class BuilderGUI : Form
     {
-        ScenarioFacade scenarioFacade;
+        private ScenarioFacade scenarioFacade;
+        private PositionGUI positionGUI;
+
         public BuilderGUI()
         {
             InitializeComponent();
@@ -22,8 +24,15 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
-                scenarioFacade.CreateAiport(tbAirportName.Text, Convert.ToInt32(tbAirportPositionX.Text), Convert.ToInt32(tbAirportPositionY.Text));
-                Console.WriteLine($"Airport: {tbAirportName.Text} at Position: (X: {tbAirportPositionX.Text}, Y: {tbAirportPositionY.Text}) added");
+                scenarioFacade.CreateAiport(tbAirportName.Text, 1 ,1);
+                lsvAirport.Columns.Add("Airport name");
+                lsvAirport.Columns.Add("Positions");
+                lsvAirport.View = View.Details;
+                
+                    lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text}));
+                    Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
+                
+                
                 ResetAirportControls();
             }
         }
@@ -50,39 +59,30 @@ namespace TPBuilder
             }
 
             //Airport X and Y
-            if (tbAirportPositionX.Text == "" || tbAirportPositionY.Text == "")
+            if (tbPositions.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
                 return false;
             }
-            if (tbAirportPositionX.Text.Length > 4 || tbAirportPositionY.Text.Length > 4)
-            {
-                Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) must be between 1 and 4 in length");
-                return false;
-            }
-            if (!Regex.IsMatch(tbAirportPositionX.Text, @"\d") || !Regex.IsMatch(tbAirportPositionY.Text, @"\d"))
-            {
-                Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) must be numerical");
-                return false;
-            }
-            if(Convert.ToInt32(tbAirportPositionX.Text) < 0 || Convert.ToInt32(tbAirportPositionY.Text) < 0)
-            {
-                Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) must be positive number");
-                return false;
-            }
+            
             return true;
         }
         
         private void ResetAirportControls()
         {
             tbAirportName.Clear();
-            tbAirportPositionX.Clear();
-            tbAirportPositionY.Clear();
+            tbPositions.Clear();
         }
 
         private bool ValidateAircraftInput()
         {
             return true;
+        }
+
+        private void BtnMap_Click(object sender, EventArgs e)
+        {
+            positionGUI = new PositionGUI();
+            positionGUI.Show();
         }
     }
 }

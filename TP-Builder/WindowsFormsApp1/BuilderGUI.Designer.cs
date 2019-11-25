@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lsbAirport = new System.Windows.Forms.ListBox();
-            this.lsbAircraft = new System.Windows.Forms.ListBox();
             this.lblAirportName = new System.Windows.Forms.Label();
-            this.lblAirportPosition = new System.Windows.Forms.Label();
             this.lblAirportTitle = new System.Windows.Forms.Label();
             this.lblAircraftTitle = new System.Windows.Forms.Label();
             this.lblMinPassenger = new System.Windows.Forms.Label();
@@ -39,7 +36,6 @@
             this.lblMinMarchandise = new System.Windows.Forms.Label();
             this.lblMaxMarchandise = new System.Windows.Forms.Label();
             this.tbAirportName = new System.Windows.Forms.TextBox();
-            this.tbAirportPositionX = new System.Windows.Forms.TextBox();
             this.tbMinPassenger = new System.Windows.Forms.TextBox();
             this.tbMaxPassenger = new System.Windows.Forms.TextBox();
             this.tbMinMarchandise = new System.Windows.Forms.TextBox();
@@ -66,26 +62,12 @@
             this.tbAircraftImage = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbAirportPositionY = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Positions = new System.Windows.Forms.Label();
+            this.lsvAirport = new System.Windows.Forms.ListView();
+            this.lsvAircraft = new System.Windows.Forms.ListView();
+            this.tbPositions = new System.Windows.Forms.TextBox();
+            this.btnMap = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lsbAirport
-            // 
-            this.lsbAirport.FormattingEnabled = true;
-            this.lsbAirport.Location = new System.Drawing.Point(14, 30);
-            this.lsbAirport.Name = "lsbAirport";
-            this.lsbAirport.Size = new System.Drawing.Size(886, 95);
-            this.lsbAirport.TabIndex = 0;
-            // 
-            // lsbAircraft
-            // 
-            this.lsbAircraft.FormattingEnabled = true;
-            this.lsbAircraft.Location = new System.Drawing.Point(14, 236);
-            this.lsbAircraft.Name = "lsbAircraft";
-            this.lsbAircraft.Size = new System.Drawing.Size(886, 95);
-            this.lsbAircraft.TabIndex = 1;
             // 
             // lblAirportName
             // 
@@ -96,16 +78,6 @@
             this.lblAirportName.Size = new System.Drawing.Size(43, 13);
             this.lblAirportName.TabIndex = 2;
             this.lblAirportName.Text = "Name:";
-            // 
-            // lblAirportPosition
-            // 
-            this.lblAirportPosition.AutoSize = true;
-            this.lblAirportPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAirportPosition.Location = new System.Drawing.Point(208, 145);
-            this.lblAirportPosition.Name = "lblAirportPosition";
-            this.lblAirportPosition.Size = new System.Drawing.Size(19, 13);
-            this.lblAirportPosition.TabIndex = 3;
-            this.lblAirportPosition.Text = "X:";
             // 
             // lblAirportTitle
             // 
@@ -173,13 +145,6 @@
             this.tbAirportName.Name = "tbAirportName";
             this.tbAirportName.Size = new System.Drawing.Size(69, 20);
             this.tbAirportName.TabIndex = 10;
-            // 
-            // tbAirportPositionX
-            // 
-            this.tbAirportPositionX.Location = new System.Drawing.Point(234, 142);
-            this.tbAirportPositionX.Name = "tbAirportPositionX";
-            this.tbAirportPositionX.Size = new System.Drawing.Size(27, 20);
-            this.tbAirportPositionX.TabIndex = 11;
             // 
             // tbMinPassenger
             // 
@@ -422,23 +387,6 @@
             this.label10.TabIndex = 37;
             this.label10.Text = "Image files";
             // 
-            // tbAirportPositionY
-            // 
-            this.tbAirportPositionY.Location = new System.Drawing.Point(296, 142);
-            this.tbAirportPositionY.Name = "tbAirportPositionY";
-            this.tbAirportPositionY.Size = new System.Drawing.Size(27, 20);
-            this.tbAirportPositionY.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Y:";
-            // 
             // Positions
             // 
             this.Positions.AutoSize = true;
@@ -449,14 +397,51 @@
             this.Positions.TabIndex = 40;
             this.Positions.Text = "Positions:";
             // 
+            // lsvAirport
+            // 
+            this.lsvAirport.HideSelection = false;
+            this.lsvAirport.Location = new System.Drawing.Point(24, 37);
+            this.lsvAirport.Name = "lsvAirport";
+            this.lsvAirport.Size = new System.Drawing.Size(874, 97);
+            this.lsvAirport.TabIndex = 41;
+            this.lsvAirport.UseCompatibleStateImageBehavior = false;
+            // 
+            // lsvAircraft
+            // 
+            this.lsvAircraft.HideSelection = false;
+            this.lsvAircraft.Location = new System.Drawing.Point(24, 245);
+            this.lsvAircraft.Name = "lsvAircraft";
+            this.lsvAircraft.Size = new System.Drawing.Size(874, 97);
+            this.lsvAircraft.TabIndex = 42;
+            this.lsvAircraft.UseCompatibleStateImageBehavior = false;
+            // 
+            // tbPositions
+            // 
+            this.tbPositions.Location = new System.Drawing.Point(206, 142);
+            this.tbPositions.Name = "tbPositions";
+            this.tbPositions.Size = new System.Drawing.Size(65, 20);
+            this.tbPositions.TabIndex = 43;
+            // 
+            // btnMap
+            // 
+            this.btnMap.Location = new System.Drawing.Point(277, 140);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(55, 23);
+            this.btnMap.TabIndex = 44;
+            this.btnMap.Text = "Map";
+            this.btnMap.UseVisualStyleBackColor = true;
+            this.btnMap.Click += new System.EventHandler(this.BtnMap_Click);
+            // 
             // BuilderGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 561);
+            this.Controls.Add(this.btnMap);
+            this.Controls.Add(this.tbPositions);
+            this.Controls.Add(this.lsvAircraft);
+            this.Controls.Add(this.lsvAirport);
             this.Controls.Add(this.Positions);
-            this.Controls.Add(this.tbAirportPositionY);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.tbAircraftImage);
@@ -483,7 +468,6 @@
             this.Controls.Add(this.tbMinMarchandise);
             this.Controls.Add(this.tbMaxPassenger);
             this.Controls.Add(this.tbMinPassenger);
-            this.Controls.Add(this.tbAirportPositionX);
             this.Controls.Add(this.tbAirportName);
             this.Controls.Add(this.lblMaxMarchandise);
             this.Controls.Add(this.lblMinMarchandise);
@@ -491,10 +475,7 @@
             this.Controls.Add(this.lblMinPassenger);
             this.Controls.Add(this.lblAircraftTitle);
             this.Controls.Add(this.lblAirportTitle);
-            this.Controls.Add(this.lblAirportPosition);
             this.Controls.Add(this.lblAirportName);
-            this.Controls.Add(this.lsbAircraft);
-            this.Controls.Add(this.lsbAirport);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -508,11 +489,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lsbAirport;
-        private System.Windows.Forms.ListBox lsbAircraft;
         private System.Windows.Forms.Label lblAirportName;
-        private System.Windows.Forms.Label lblAirportPosition;
         private System.Windows.Forms.Label lblAirportTitle;
         private System.Windows.Forms.Label lblAircraftTitle;
         private System.Windows.Forms.Label lblMinPassenger;
@@ -520,7 +497,6 @@
         private System.Windows.Forms.Label lblMinMarchandise;
         private System.Windows.Forms.Label lblMaxMarchandise;
         private System.Windows.Forms.TextBox tbAirportName;
-        private System.Windows.Forms.TextBox tbAirportPositionX;
         private System.Windows.Forms.TextBox tbMinPassenger;
         private System.Windows.Forms.TextBox tbMaxPassenger;
         private System.Windows.Forms.TextBox tbMinMarchandise;
@@ -547,9 +523,11 @@
         private System.Windows.Forms.TextBox tbAircraftImage;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbAirportPositionY;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Positions;
+        private System.Windows.Forms.ListView lsvAirport;
+        private System.Windows.Forms.ListView lsvAircraft;
+        private System.Windows.Forms.TextBox tbPositions;
+        private System.Windows.Forms.Button btnMap;
     }
 }
 

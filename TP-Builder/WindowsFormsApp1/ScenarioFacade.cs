@@ -14,7 +14,8 @@ namespace TPBuilder
 
         private ScenarioFacade()
         {
-            this.Airports = new List<Airport>();
+            Airports = new List<Airport>();
+            Aircrafts = new List<Aircraft>();
         }
 
         public static ScenarioFacade Instance
@@ -37,7 +38,7 @@ namespace TPBuilder
                 if (ValidAirportPostion(x, y))
                 {
                     Airports.Add(new Airport(name));
-                    System.Console.WriteLine($"Airport <{name}> added at {x}, {y}");
+                    System.Console.WriteLine($"Airport <{name}> added at {x}, {y} Aiports List {Airports.Count}");
                 }
                 else
                 {
