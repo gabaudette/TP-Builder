@@ -2,6 +2,10 @@
 {
     public class CargoPlane : PassengerAircraft
     {
-        public CargoPlane(string name) : base(name) { }
+        public int Weight { get; private set; }
+        public CargoPlane(string name, int loadingTime, int unloadingTime, int weigth) : base(name, loadingTime, unloadingTime)
+        {
+            Weight = weigth;
+        }
     }
 }

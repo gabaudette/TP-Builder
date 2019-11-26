@@ -12,28 +12,30 @@
             return aircraftFactory;
         }
 
-        public static Aircraft CreateAircraft(string name, string type)
+        public static Aircraft CreateCargoPlane(string name, int loadingTime, int unLoadingTime, int weigth)
         {
-            Aircraft aircraft = null;
-            switch (type)
-            {
-                case "Cargo Plane":
-                    aircraft = new CargoPlane(name);
-                    break;
-                case "Observer Plane":
-                    aircraft = new ObserverPlane(name);
-                    break;
-                case "Passenger Plane":
-                    aircraft = new PassengerPlane(name);
-                    break;
-                case "Rescue Helicopter":
-                    aircraft = new RescueHelicopter(name);
-                    break;
-                case "Water Bomber":
-                    aircraft = new WaterBomber(name);
-                    break;
-            }
-            return aircraft;
+            return new CargoPlane(name, loadingTime, unLoadingTime, weigth);
         }
+
+        public static Aircraft CreatePassengerPlane(string name, int loadingTime, int unLoadingTime , int capacity)
+        {
+            return new CargoPlane(name, loadingTime, unLoadingTime, capacity);
+        }
+
+        public static Aircraft CreateWaterBomber(string name, int droppingTime, int waterCapacity)
+        {
+            return new WaterBomber(name, droppingTime, waterCapacity);
+        }
+
+        public static Aircraft CreateObserverPlane(string name)
+        {
+            return new ObserverPlane(name);
+        }
+
+        public static Aircraft CreateRescueHelicopter(string name)
+        {
+            return new RescueHelicopter(name);
+        }
+
     }
 }
