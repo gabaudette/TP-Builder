@@ -207,6 +207,7 @@
             this.btnAddAircraft.TabIndex = 29;
             this.btnAddAircraft.Text = "Add";
             this.btnAddAircraft.UseVisualStyleBackColor = false;
+            this.btnAddAircraft.Click += new System.EventHandler(this.BtnAddAircraft_Click);
             // 
             // tbMaintenance
             // 
