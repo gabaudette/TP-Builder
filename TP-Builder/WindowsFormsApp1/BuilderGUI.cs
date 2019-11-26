@@ -21,6 +21,7 @@ namespace TPBuilder
             lsvAircraft.Columns.Add("Aircraft Name");
             lsvAircraft.Columns.Add("Aircraft Type");
             lsvAircraft.View = View.Details;
+
         }
 
         private void BuilderGUI_Load(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace TPBuilder
          
             if (tbAirportName.Text == "")
             {
-                Console.WriteLine("Validation Error: Airport name input cannot be empty");
+                Console.WriteLine("Validation Error: Airport name input value cannot be empty");
                 return false;
             }
 
@@ -86,7 +87,7 @@ namespace TPBuilder
         {
             if (tbAircraftName.Text == "")
             {
-                Console.WriteLine("Validation Error: Aircraft name input cannot be empty");
+                Console.WriteLine("Validation Error: Aircraft name input value cannot be empty");
                 return false;
             }
 
@@ -102,9 +103,27 @@ namespace TPBuilder
                 return false;
             }
 
+            if(tbSpeed.Text == "")
+            {
+                Console.WriteLine("Validation Error: Aircraft speed input value cannot be empty");
+                return false;
+            }
+
             if (!(Regex.IsMatch(tbSpeed.Text, @"\d")))
             {
                 Console.WriteLine("Validation Error: Aircraft speed value must be numerical");
+                return false;
+            }
+
+            if(tbMaintenance.Text == "")
+            {
+                Console.WriteLine("Validation Error: Aircraft maintenance time input value cannot be empty");
+                return false;
+            }
+
+            if(!(Regex.IsMatch(tbMaintenance.Text, @"\d")))
+            {
+                Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
                 return false;
             }
 
