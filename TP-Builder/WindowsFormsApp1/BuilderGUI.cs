@@ -54,7 +54,7 @@ namespace TPBuilder
 
         private bool ValidateAirportInput()
         {
-            // Airport Name
+         
             if (tbAirportName.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport name input cannot be empty");
@@ -73,7 +73,6 @@ namespace TPBuilder
                 return false;
             }
 
-            //Airport X and Y
             if (tbPositions.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
