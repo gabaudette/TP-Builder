@@ -134,17 +134,35 @@ namespace TPBuilder
 
         private void CheckAircraftInputType()
         {
-            if (cmbAircraftType.SelectedIndex == 0 || cmbAircraftType.SelectedIndex == 1)
+            //@Aircraft Type: Cargo Plane
+            if (cmbAircraftType.SelectedIndex == 0)
+            {
+                tbWeigth.Enabled = true;
+                tbCapacity.Enabled = false;
+            }
+
+            //@Aircraft Type: Passenger Plane & Water Bomber
+            else if(cmbAircraftType.SelectedIndex == 1 || cmbAircraftType.SelectedIndex == 4)
+            {
+                tbCapacity.Enabled = true;
+                tbWeigth.Enabled = false;
+            }
+
+            //@Aircraft Type: CargoPlane & Passenger Plane
+            else if (cmbAircraftType.SelectedIndex == 0 || cmbAircraftType.SelectedIndex == 1)
             {
                 tbLoad.Enabled = true;
                 tbUnload.Enabled = true;
             }
+
             else
             {
                 tbLoad.Clear();
                 tbUnload.Clear();
                 tbLoad.Enabled = false;
                 tbUnload.Enabled = false;
+                tbCapacity.Enabled = false;
+                tbWeigth.Enabled = false;
             }
         }
 

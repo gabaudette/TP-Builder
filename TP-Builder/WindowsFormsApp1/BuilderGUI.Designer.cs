@@ -67,6 +67,10 @@
             this.tbPositions = new System.Windows.Forms.TextBox();
             this.btnMap = new System.Windows.Forms.Button();
             this.cmbAircraftType = new System.Windows.Forms.ComboBox();
+            this.tbCapacity = new System.Windows.Forms.TextBox();
+            this.lblCapacity = new System.Windows.Forms.Label();
+            this.tbWeigth = new System.Windows.Forms.TextBox();
+            this.lblWeigth = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAirportName
@@ -75,7 +79,7 @@
             this.lblAirportName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAirportName.Location = new System.Drawing.Point(10, 145);
             this.lblAirportName.Name = "lblAirportName";
-            this.lblAirportName.Size = new System.Drawing.Size(63, 20);
+            this.lblAirportName.Size = new System.Drawing.Size(43, 13);
             this.lblAirportName.TabIndex = 2;
             this.lblAirportName.Text = "Name:";
             // 
@@ -85,7 +89,7 @@
             this.lblAirportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAirportTitle.Location = new System.Drawing.Point(19, 8);
             this.lblAirportTitle.Name = "lblAirportTitle";
-            this.lblAirportTitle.Size = new System.Drawing.Size(82, 25);
+            this.lblAirportTitle.Size = new System.Drawing.Size(57, 17);
             this.lblAirportTitle.TabIndex = 4;
             this.lblAirportTitle.Text = "Airport";
             // 
@@ -95,7 +99,7 @@
             this.lblAircraftTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftTitle.Location = new System.Drawing.Point(19, 216);
             this.lblAircraftTitle.Name = "lblAircraftTitle";
-            this.lblAircraftTitle.Size = new System.Drawing.Size(88, 25);
+            this.lblAircraftTitle.Size = new System.Drawing.Size(61, 17);
             this.lblAircraftTitle.TabIndex = 5;
             this.lblAircraftTitle.Text = "Aircraft";
             // 
@@ -105,7 +109,7 @@
             this.lblMinPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinPassenger.Location = new System.Drawing.Point(331, 145);
             this.lblMinPassenger.Name = "lblMinPassenger";
-            this.lblMinPassenger.Size = new System.Drawing.Size(144, 20);
+            this.lblMinPassenger.Size = new System.Drawing.Size(96, 13);
             this.lblMinPassenger.TabIndex = 6;
             this.lblMinPassenger.Text = "MinPassengers:";
             // 
@@ -115,7 +119,7 @@
             this.lblMaxPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxPassenger.Location = new System.Drawing.Point(461, 145);
             this.lblMaxPassenger.Name = "lblMaxPassenger";
-            this.lblMaxPassenger.Size = new System.Drawing.Size(148, 20);
+            this.lblMaxPassenger.Size = new System.Drawing.Size(99, 13);
             this.lblMaxPassenger.TabIndex = 7;
             this.lblMaxPassenger.Text = "MaxPassengers:";
             // 
@@ -125,7 +129,7 @@
             this.lblMinMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinMarchandise.Location = new System.Drawing.Point(609, 145);
             this.lblMinMarchandise.Name = "lblMinMarchandise";
-            this.lblMinMarchandise.Size = new System.Drawing.Size(152, 20);
+            this.lblMinMarchandise.Size = new System.Drawing.Size(103, 13);
             this.lblMinMarchandise.TabIndex = 8;
             this.lblMinMarchandise.Text = "MinMarchandise:";
             // 
@@ -135,7 +139,7 @@
             this.lblMaxMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxMarchandise.Location = new System.Drawing.Point(758, 145);
             this.lblMaxMarchandise.Name = "lblMaxMarchandise";
-            this.lblMaxMarchandise.Size = new System.Drawing.Size(156, 20);
+            this.lblMaxMarchandise.Size = new System.Drawing.Size(106, 13);
             this.lblMaxMarchandise.TabIndex = 9;
             this.lblMaxMarchandise.Text = "MaxMarchandise:";
             // 
@@ -143,35 +147,35 @@
             // 
             this.tbAirportName.Location = new System.Drawing.Point(65, 142);
             this.tbAirportName.Name = "tbAirportName";
-            this.tbAirportName.Size = new System.Drawing.Size(69, 26);
+            this.tbAirportName.Size = new System.Drawing.Size(69, 20);
             this.tbAirportName.TabIndex = 10;
             // 
             // tbMinPassenger
             // 
             this.tbMinPassenger.Location = new System.Drawing.Point(425, 142);
             this.tbMinPassenger.Name = "tbMinPassenger";
-            this.tbMinPassenger.Size = new System.Drawing.Size(28, 26);
+            this.tbMinPassenger.Size = new System.Drawing.Size(28, 20);
             this.tbMinPassenger.TabIndex = 12;
             // 
             // tbMaxPassenger
             // 
             this.tbMaxPassenger.Location = new System.Drawing.Point(567, 142);
             this.tbMaxPassenger.Name = "tbMaxPassenger";
-            this.tbMaxPassenger.Size = new System.Drawing.Size(28, 26);
+            this.tbMaxPassenger.Size = new System.Drawing.Size(28, 20);
             this.tbMaxPassenger.TabIndex = 13;
             // 
             // tbMinMarchandise
             // 
             this.tbMinMarchandise.Location = new System.Drawing.Point(719, 142);
             this.tbMinMarchandise.Name = "tbMinMarchandise";
-            this.tbMinMarchandise.Size = new System.Drawing.Size(28, 26);
+            this.tbMinMarchandise.Size = new System.Drawing.Size(28, 20);
             this.tbMinMarchandise.TabIndex = 14;
             // 
             // tbMaxMarchandise
             // 
             this.tbMaxMarchandise.Location = new System.Drawing.Point(871, 142);
             this.tbMaxMarchandise.Name = "tbMaxMarchandise";
-            this.tbMaxMarchandise.Size = new System.Drawing.Size(28, 26);
+            this.tbMaxMarchandise.Size = new System.Drawing.Size(28, 20);
             this.tbMaxMarchandise.TabIndex = 15;
             // 
             // btnAddAirport
@@ -201,7 +205,7 @@
             this.btnAddAircraft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen;
             this.btnAddAircraft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAircraft.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAddAircraft.Location = new System.Drawing.Point(14, 383);
+            this.btnAddAircraft.Location = new System.Drawing.Point(14, 426);
             this.btnAddAircraft.Name = "btnAddAircraft";
             this.btnAddAircraft.Size = new System.Drawing.Size(885, 23);
             this.btnAddAircraft.TabIndex = 29;
@@ -211,76 +215,76 @@
             // 
             // tbMaintenance
             // 
-            this.tbMaintenance.Location = new System.Drawing.Point(806, 348);
+            this.tbMaintenance.Location = new System.Drawing.Point(317, 348);
             this.tbMaintenance.Name = "tbMaintenance";
-            this.tbMaintenance.Size = new System.Drawing.Size(93, 26);
+            this.tbMaintenance.Size = new System.Drawing.Size(110, 20);
             this.tbMaintenance.TabIndex = 28;
             // 
             // tbUnload
             // 
-            this.tbUnload.Location = new System.Drawing.Point(636, 348);
+            this.tbUnload.Location = new System.Drawing.Point(555, 384);
             this.tbUnload.Name = "tbUnload";
-            this.tbUnload.Size = new System.Drawing.Size(58, 26);
+            this.tbUnload.Size = new System.Drawing.Size(110, 20);
             this.tbUnload.TabIndex = 27;
             // 
             // tbLoad
             // 
-            this.tbLoad.Location = new System.Drawing.Point(502, 348);
+            this.tbLoad.Location = new System.Drawing.Point(555, 348);
             this.tbLoad.Name = "tbLoad";
-            this.tbLoad.Size = new System.Drawing.Size(58, 26);
+            this.tbLoad.Size = new System.Drawing.Size(110, 20);
             this.tbLoad.TabIndex = 26;
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(377, 348);
+            this.tbSpeed.Location = new System.Drawing.Point(317, 384);
             this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(75, 26);
+            this.tbSpeed.Size = new System.Drawing.Size(110, 20);
             this.tbSpeed.TabIndex = 25;
             // 
             // tbAircraftName
             // 
             this.tbAircraftName.Location = new System.Drawing.Point(65, 348);
             this.tbAircraftName.Name = "tbAircraftName";
-            this.tbAircraftName.Size = new System.Drawing.Size(87, 26);
+            this.tbAircraftName.Size = new System.Drawing.Size(110, 20);
             this.tbAircraftName.TabIndex = 23;
             // 
             // lblAircraftMaintenance
             // 
             this.lblAircraftMaintenance.AutoSize = true;
             this.lblAircraftMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftMaintenance.Location = new System.Drawing.Point(715, 351);
+            this.lblAircraftMaintenance.Location = new System.Drawing.Point(196, 351);
             this.lblAircraftMaintenance.Name = "lblAircraftMaintenance";
-            this.lblAircraftMaintenance.Size = new System.Drawing.Size(121, 20);
+            this.lblAircraftMaintenance.Size = new System.Drawing.Size(115, 13);
             this.lblAircraftMaintenance.TabIndex = 22;
-            this.lblAircraftMaintenance.Text = "Maintenance:";
+            this.lblAircraftMaintenance.Text = "Maintenance Time:";
             // 
             // lblAircraftUnload
             // 
             this.lblAircraftUnload.AutoSize = true;
             this.lblAircraftUnload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftUnload.Location = new System.Drawing.Point(577, 351);
+            this.lblAircraftUnload.Location = new System.Drawing.Point(438, 387);
             this.lblAircraftUnload.Name = "lblAircraftUnload";
-            this.lblAircraftUnload.Size = new System.Drawing.Size(73, 20);
+            this.lblAircraftUnload.Size = new System.Drawing.Size(99, 13);
             this.lblAircraftUnload.TabIndex = 21;
-            this.lblAircraftUnload.Text = "Unload:";
+            this.lblAircraftUnload.Text = "Unloading Time:";
             // 
             // lblAircraftLoad
             // 
             this.lblAircraftLoad.AutoSize = true;
             this.lblAircraftLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftLoad.Location = new System.Drawing.Point(461, 351);
+            this.lblAircraftLoad.Location = new System.Drawing.Point(450, 351);
             this.lblAircraftLoad.Name = "lblAircraftLoad";
-            this.lblAircraftLoad.Size = new System.Drawing.Size(56, 20);
+            this.lblAircraftLoad.Size = new System.Drawing.Size(87, 13);
             this.lblAircraftLoad.TabIndex = 20;
-            this.lblAircraftLoad.Text = "Load:";
+            this.lblAircraftLoad.Text = "Loading Time:";
             // 
             // lblAircraftSpeed
             // 
             this.lblAircraftSpeed.AutoSize = true;
             this.lblAircraftSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftSpeed.Location = new System.Drawing.Point(322, 351);
+            this.lblAircraftSpeed.Location = new System.Drawing.Point(196, 387);
             this.lblAircraftSpeed.Name = "lblAircraftSpeed";
-            this.lblAircraftSpeed.Size = new System.Drawing.Size(67, 20);
+            this.lblAircraftSpeed.Size = new System.Drawing.Size(47, 13);
             this.lblAircraftSpeed.TabIndex = 19;
             this.lblAircraftSpeed.Text = "Speed:";
             // 
@@ -288,9 +292,9 @@
             // 
             this.lblAircraftType.AutoSize = true;
             this.lblAircraftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftType.Location = new System.Drawing.Point(160, 351);
+            this.lblAircraftType.Location = new System.Drawing.Point(18, 387);
             this.lblAircraftType.Name = "lblAircraftType";
-            this.lblAircraftType.Size = new System.Drawing.Size(55, 20);
+            this.lblAircraftType.Size = new System.Drawing.Size(39, 13);
             this.lblAircraftType.TabIndex = 18;
             this.lblAircraftType.Text = "Type:";
             // 
@@ -300,7 +304,7 @@
             this.lblAircraftName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftName.Location = new System.Drawing.Point(14, 351);
             this.lblAircraftName.Name = "lblAircraftName";
-            this.lblAircraftName.Size = new System.Drawing.Size(63, 20);
+            this.lblAircraftName.Size = new System.Drawing.Size(43, 13);
             this.lblAircraftName.TabIndex = 17;
             this.lblAircraftName.Text = "Name:";
             // 
@@ -308,9 +312,9 @@
             // 
             this.lblMapImage.AutoSize = true;
             this.lblMapImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMapImage.Location = new System.Drawing.Point(14, 457);
+            this.lblMapImage.Location = new System.Drawing.Point(12, 502);
             this.lblMapImage.Name = "lblMapImage";
-            this.lblMapImage.Size = new System.Drawing.Size(106, 20);
+            this.lblMapImage.Size = new System.Drawing.Size(72, 13);
             this.lblMapImage.TabIndex = 30;
             this.lblMapImage.Text = "Map image:";
             // 
@@ -318,9 +322,9 @@
             // 
             this.lblAirportImage.AutoSize = true;
             this.lblAirportImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAirportImage.Location = new System.Drawing.Point(308, 457);
+            this.lblAirportImage.Location = new System.Drawing.Point(306, 502);
             this.lblAirportImage.Name = "lblAirportImage";
-            this.lblAirportImage.Size = new System.Drawing.Size(122, 20);
+            this.lblAirportImage.Size = new System.Drawing.Size(81, 13);
             this.lblAirportImage.TabIndex = 31;
             this.lblAirportImage.Text = "Airport image";
             // 
@@ -328,31 +332,31 @@
             // 
             this.lblAircraftImage.AutoSize = true;
             this.lblAircraftImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAircraftImage.Location = new System.Drawing.Point(605, 457);
+            this.lblAircraftImage.Location = new System.Drawing.Point(603, 502);
             this.lblAircraftImage.Name = "lblAircraftImage";
-            this.lblAircraftImage.Size = new System.Drawing.Size(128, 20);
+            this.lblAircraftImage.Size = new System.Drawing.Size(85, 13);
             this.lblAircraftImage.TabIndex = 32;
             this.lblAircraftImage.Text = "Aircraft image";
             // 
             // tbMapImage
             // 
-            this.tbMapImage.Location = new System.Drawing.Point(93, 454);
+            this.tbMapImage.Location = new System.Drawing.Point(91, 499);
             this.tbMapImage.Name = "tbMapImage";
-            this.tbMapImage.Size = new System.Drawing.Size(203, 26);
+            this.tbMapImage.Size = new System.Drawing.Size(203, 20);
             this.tbMapImage.TabIndex = 33;
             // 
             // tbAirportImage
             // 
-            this.tbAirportImage.Location = new System.Drawing.Point(394, 454);
+            this.tbAirportImage.Location = new System.Drawing.Point(392, 499);
             this.tbAirportImage.Name = "tbAirportImage";
-            this.tbAirportImage.Size = new System.Drawing.Size(203, 26);
+            this.tbAirportImage.Size = new System.Drawing.Size(203, 20);
             this.tbAirportImage.TabIndex = 34;
             // 
             // tbAircraftImage
             // 
-            this.tbAircraftImage.Location = new System.Drawing.Point(695, 454);
+            this.tbAircraftImage.Location = new System.Drawing.Point(693, 499);
             this.tbAircraftImage.Name = "tbAircraftImage";
-            this.tbAircraftImage.Size = new System.Drawing.Size(203, 26);
+            this.tbAircraftImage.Size = new System.Drawing.Size(203, 20);
             this.tbAircraftImage.TabIndex = 35;
             // 
             // btnGenerate
@@ -364,7 +368,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnGenerate.Location = new System.Drawing.Point(14, 494);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 539);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(885, 23);
             this.btnGenerate.TabIndex = 36;
@@ -375,9 +379,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 425);
+            this.label10.Location = new System.Drawing.Point(17, 470);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 25);
+            this.label10.Size = new System.Drawing.Size(86, 17);
             this.label10.TabIndex = 37;
             this.label10.Text = "Image files";
             // 
@@ -387,7 +391,7 @@
             this.Positions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Positions.Location = new System.Drawing.Point(143, 145);
             this.Positions.Name = "Positions";
-            this.Positions.Size = new System.Drawing.Size(93, 20);
+            this.Positions.Size = new System.Drawing.Size(62, 13);
             this.Positions.TabIndex = 40;
             this.Positions.Text = "Positions:";
             // 
@@ -413,7 +417,7 @@
             // 
             this.tbPositions.Location = new System.Drawing.Point(206, 142);
             this.tbPositions.Name = "tbPositions";
-            this.tbPositions.Size = new System.Drawing.Size(65, 26);
+            this.tbPositions.Size = new System.Drawing.Size(65, 20);
             this.tbPositions.TabIndex = 43;
             // 
             // btnMap
@@ -429,17 +433,55 @@
             // cmbAircraftType
             // 
             this.cmbAircraftType.FormattingEnabled = true;
-            this.cmbAircraftType.Location = new System.Drawing.Point(206, 348);
+            this.cmbAircraftType.Location = new System.Drawing.Point(65, 384);
             this.cmbAircraftType.Name = "cmbAircraftType";
-            this.cmbAircraftType.Size = new System.Drawing.Size(110, 28);
+            this.cmbAircraftType.Size = new System.Drawing.Size(110, 21);
             this.cmbAircraftType.TabIndex = 45;
             this.cmbAircraftType.SelectionChangeCommitted += new System.EventHandler(this.CmbAircraftType_SelectionChangeCommitted);
             // 
+            // tbCapacity
+            // 
+            this.tbCapacity.Location = new System.Drawing.Point(761, 384);
+            this.tbCapacity.Name = "tbCapacity";
+            this.tbCapacity.Size = new System.Drawing.Size(110, 20);
+            this.tbCapacity.TabIndex = 47;
+            // 
+            // lblCapacity
+            // 
+            this.lblCapacity.AutoSize = true;
+            this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.Location = new System.Drawing.Point(692, 387);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.Size = new System.Drawing.Size(60, 13);
+            this.lblCapacity.TabIndex = 46;
+            this.lblCapacity.Text = "Capacity:";
+            // 
+            // tbWeigth
+            // 
+            this.tbWeigth.Location = new System.Drawing.Point(761, 348);
+            this.tbWeigth.Name = "tbWeigth";
+            this.tbWeigth.Size = new System.Drawing.Size(110, 20);
+            this.tbWeigth.TabIndex = 49;
+            // 
+            // lblWeigth
+            // 
+            this.lblWeigth.AutoSize = true;
+            this.lblWeigth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeigth.Location = new System.Drawing.Point(692, 351);
+            this.lblWeigth.Name = "lblWeigth";
+            this.lblWeigth.Size = new System.Drawing.Size(51, 13);
+            this.lblWeigth.TabIndex = 48;
+            this.lblWeigth.Text = "Weigth:";
+            // 
             // BuilderGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 561);
+            this.ClientSize = new System.Drawing.Size(915, 621);
+            this.Controls.Add(this.tbWeigth);
+            this.Controls.Add(this.lblWeigth);
+            this.Controls.Add(this.tbCapacity);
+            this.Controls.Add(this.lblCapacity);
             this.Controls.Add(this.cmbAircraftType);
             this.Controls.Add(this.btnMap);
             this.Controls.Add(this.tbPositions);
@@ -531,6 +573,10 @@
         private System.Windows.Forms.TextBox tbPositions;
         private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.ComboBox cmbAircraftType;
+        private System.Windows.Forms.TextBox tbCapacity;
+        private System.Windows.Forms.Label lblCapacity;
+        private System.Windows.Forms.TextBox tbWeigth;
+        private System.Windows.Forms.Label lblWeigth;
     }
 }
 
