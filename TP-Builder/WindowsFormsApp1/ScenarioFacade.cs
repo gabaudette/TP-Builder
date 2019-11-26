@@ -78,16 +78,64 @@ namespace TPBuilder
             return true;
         }
 
-        public void AddAircraft(string name, string type)
+        public void AddCargoPlane(string name, int loadingTime, int unLoadingTime, int weigth)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateAircraft(name,type);
+            Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, loadingTime, unLoadingTime, weigth);
             Aircrafts.Add(aircraft);
+            //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
             {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
             }
-           
+        }
+
+        public void AddPassengerPlane(string name, int loadingTime, int unLoadingTime, int capacity)
+        {
+            aircraftFactory = AircraftFactory.GetAircraftFactory();
+            Aircraft aircraft = AircraftFactory.CreatePassengerPlane(name, loadingTime, unLoadingTime, capacity);
+            Aircrafts.Add(aircraft);
+            //!For testing only REMOVE
+            foreach (Aircraft air in Aircrafts)
+            {
+                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            }
+        }
+
+        public void AddWaterBomber(string name, int droppingTime, int waterCapacity)
+        {
+            aircraftFactory = AircraftFactory.GetAircraftFactory();
+            Aircraft aircraft = AircraftFactory.CreateWaterBomber(name, droppingTime, waterCapacity);
+            Aircrafts.Add(aircraft);
+            //!For testing only REMOVE
+            foreach (Aircraft air in Aircrafts)
+            {
+                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            }
+        }
+
+        public void AddObserverPlane(string name)
+        {
+            aircraftFactory = AircraftFactory.GetAircraftFactory();
+            Aircraft aircraft = AircraftFactory.CreateObserverPlane(name);
+            Aircrafts.Add(aircraft);
+            //!For testing only REMOVE
+            foreach (Aircraft air in Aircrafts)
+            {
+                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            }
+        }
+
+        public void AddRescueHelicopter(string name)
+        {
+            aircraftFactory = AircraftFactory.GetAircraftFactory();
+            Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name);
+            Aircrafts.Add(aircraft);
+            //!For testing only REMOVE
+            foreach (Aircraft air in Aircrafts)
+            {
+                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            }
         }
 
         public void DeleteAircraft(int index)

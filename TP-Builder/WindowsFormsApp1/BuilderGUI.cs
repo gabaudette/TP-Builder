@@ -47,8 +47,25 @@ namespace TPBuilder
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
             if (ValidateAircraftInput())
-            { 
-                scenarioFacade.AddAircraft(tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString());
+            {
+                switch (cmbAircraftType.SelectedIndex)
+                {
+                    case 0:
+                        scenarioFacade.AddCargoPlane(tbAircraftName.Text, Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeigth.Text));
+                        break;
+                    case 1:
+                        scenarioFacade.AddPassengerPlane(tbAircraftName.Text, Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        break;
+                    case 2:
+                        scenarioFacade.AddObserverPlane(tbAircraftName.Text);
+                        break;
+                    case 3:
+                        scenarioFacade.AddRescueHelicopter(tbAircraftName.Text);
+                        break;
+                    case 4:
+                        scenarioFacade.AddWaterBomber(tbAircraftName.Text, 0, 0);
+                        break;
+                }
                 lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));
                 Console.WriteLine($"Aircraft: {tbAircraftName.Text} Type: ({cmbAircraftType.SelectedItem.ToString()}) added");
                 ResetAircraftControls();
