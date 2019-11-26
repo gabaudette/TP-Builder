@@ -19,5 +19,10 @@ namespace TPBuilder
             Console.WriteLine($"X: {point.X}, Y: {point.Y}");
             //TODO : Find formula LAT/LONG
         }
+
+        private void PositionGUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

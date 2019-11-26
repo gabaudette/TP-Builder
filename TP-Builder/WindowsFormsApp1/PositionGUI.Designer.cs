@@ -37,7 +37,7 @@
             this.pbMap.Location = new System.Drawing.Point(27, 17);
             this.pbMap.Margin = new System.Windows.Forms.Padding(2);
             this.pbMap.Name = "pbMap";
-            this.pbMap.Size = new System.Drawing.Size(935, 600);
+            this.pbMap.Size = new System.Drawing.Size(800, 600);
             this.pbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMap.TabIndex = 0;
             this.pbMap.TabStop = false;
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 761);
+            this.ClientSize = new System.Drawing.Size(849, 634);
             this.Controls.Add(this.pbMap);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -55,6 +55,7 @@
             this.Name = "PositionGUI";
             this.ShowIcon = false;
             this.Text = "Map";
+            this.Load += new System.EventHandler(this.PositionGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.ResumeLayout(false);
 
