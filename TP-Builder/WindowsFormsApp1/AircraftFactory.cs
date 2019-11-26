@@ -12,9 +12,28 @@
             return aircraftFactory;
         }
         //type?
-        public Aircraft CreateAircraft()
+        public static Aircraft CreateAircraft(string name, string type)
         {
-            return null;
+            Aircraft aircraft = null;
+            switch (type)
+            {
+                case "CargoPlane":
+                    aircraft = new CargoPlane(name);
+                    break;
+                case "ObserverPlane":
+                    aircraft = new ObserverPlane(name);
+                    break;
+                case "PassengerPlane":
+                    aircraft = new PassengerPlane(name);
+                    break;
+                case "RescueHelicopter":
+                    aircraft = new RescueHelicopter(name);
+                    break;
+                case "WaterBomber":
+                    aircraft = new WaterBomber(name);
+                    break;
+            }
+            return aircraft;
         }
 
         public override string ToString()
