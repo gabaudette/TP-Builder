@@ -78,10 +78,10 @@ namespace TPBuilder
             return true;
         }
 
-        public void AddCargoPlane(string name, int loadingTime, int unLoadingTime, int weigth)
+        public void AddCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weigth)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, loadingTime, unLoadingTime, weigth);
+            Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weigth);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
@@ -90,10 +90,10 @@ namespace TPBuilder
             }
         }
 
-        public void AddPassengerPlane(string name, int loadingTime, int unLoadingTime, int capacity)
+        public void AddPassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreatePassengerPlane(name, loadingTime, unLoadingTime, capacity);
+            Aircraft aircraft = AircraftFactory.CreatePassengerPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
@@ -102,10 +102,10 @@ namespace TPBuilder
             }
         }
 
-        public void AddWaterBomber(string name, int droppingTime, int waterCapacity)
+        public void AddWaterBomber(string name, int speed, int maintenance, int droppingTime, int waterCapacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateWaterBomber(name, droppingTime, waterCapacity);
+            Aircraft aircraft = AircraftFactory.CreateWaterBomber(name, speed, maintenance, droppingTime, waterCapacity);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
@@ -114,10 +114,10 @@ namespace TPBuilder
             }
         }
 
-        public void AddObserverPlane(string name)
+        public void AddObserverPlane(string name , int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateObserverPlane(name);
+            Aircraft aircraft = AircraftFactory.CreateObserverPlane(name, speed, maintenance);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
@@ -126,10 +126,10 @@ namespace TPBuilder
             }
         }
 
-        public void AddRescueHelicopter(string name)
+        public void AddRescueHelicopter(string name, int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name);
+            Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed , maintenance);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)

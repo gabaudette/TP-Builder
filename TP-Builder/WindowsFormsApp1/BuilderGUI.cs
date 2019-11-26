@@ -51,19 +51,19 @@ namespace TPBuilder
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        scenarioFacade.AddCargoPlane(tbAircraftName.Text, Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeigth.Text));
+                        scenarioFacade.AddCargoPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeigth.Text));
                         break;
                     case 1:
-                        scenarioFacade.AddPassengerPlane(tbAircraftName.Text, Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        scenarioFacade.AddPassengerPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
                         break;
                     case 2:
-                        scenarioFacade.AddObserverPlane(tbAircraftName.Text);
+                        scenarioFacade.AddObserverPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 3:
-                        scenarioFacade.AddRescueHelicopter(tbAircraftName.Text);
+                        scenarioFacade.AddRescueHelicopter(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 4:
-                        scenarioFacade.AddWaterBomber(tbAircraftName.Text, 0, 0);
+                        scenarioFacade.AddWaterBomber(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
                         break;
                 }
                 lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));

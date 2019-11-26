@@ -12,29 +12,29 @@
             return aircraftFactory;
         }
 
-        public static Aircraft CreateCargoPlane(string name, int loadingTime, int unLoadingTime, int weigth)
+        public static Aircraft CreateCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weigth)
         {
-            return new CargoPlane(name, loadingTime, unLoadingTime, weigth);
+            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weigth);
         }
 
-        public static Aircraft CreatePassengerPlane(string name, int loadingTime, int unLoadingTime , int capacity)
+        public static Aircraft CreatePassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime , int capacity)
         {
-            return new CargoPlane(name, loadingTime, unLoadingTime, capacity);
+            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
         }
 
-        public static Aircraft CreateWaterBomber(string name, int droppingTime, int waterCapacity)
+        public static Aircraft CreateWaterBomber(string name, int speed, int maintenance, int droppingTime, int waterCapacity)
         {
-            return new WaterBomber(name, droppingTime, waterCapacity);
+            return new WaterBomber(name, speed, maintenance, droppingTime, waterCapacity);
         }
 
-        public static Aircraft CreateObserverPlane(string name)
+        public static Aircraft CreateObserverPlane(string name,  int speed, int maintenance)
         {
-            return new ObserverPlane(name);
+            return new ObserverPlane(name, speed, maintenance);
         }
 
-        public static Aircraft CreateRescueHelicopter(string name)
+        public static Aircraft CreateRescueHelicopter(string name,  int speed, int maintenance)
         {
-            return new RescueHelicopter(name);
+            return new RescueHelicopter(name, speed, maintenance);
         }
 
     }
