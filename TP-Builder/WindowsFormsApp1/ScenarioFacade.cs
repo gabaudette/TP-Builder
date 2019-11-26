@@ -80,10 +80,10 @@ namespace TPBuilder
         }
 
         // TODO : Aircraft Type ?
-        public void AddAircraft()
+        public void AddAircraft(string name, string type)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = aircraftFactory.CreateAircraft();
+            Aircraft aircraft = AircraftFactory.CreateAircraft(name,type);
             Aircrafts.Add(aircraft);
         }
 
