@@ -2,8 +2,6 @@
 {
     public class WaterBomber : Aircraft
     {
-        public WaterBomber(string name) : base(name)
-        {
-        }
+        public WaterBomber(string name) : base(name) { }
     }
 }

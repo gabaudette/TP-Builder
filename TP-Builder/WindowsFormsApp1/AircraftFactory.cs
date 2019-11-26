@@ -3,7 +3,6 @@
     public sealed class AircraftFactory
     {
         private static AircraftFactory aircraftFactory;
-
         private AircraftFactory(){}
 
         public static AircraftFactory GetAircraftFactory()
@@ -16,6 +15,11 @@
         public Aircraft CreateAircraft()
         {
             return null;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

@@ -5,7 +5,7 @@
         public string Name { get; protected set; }
         public Aircraft(string name)
         {
-            this.Name = name;
+            Name = name;
         }
     }
 }

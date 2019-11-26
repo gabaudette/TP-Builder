@@ -2,8 +2,6 @@
 {
     public class PassengerAircraft : Aircraft
     {
-        public PassengerAircraft(string name) : base(name)
-        {
-        }
+        public PassengerAircraft(string name) : base(name) { }
     }
 }

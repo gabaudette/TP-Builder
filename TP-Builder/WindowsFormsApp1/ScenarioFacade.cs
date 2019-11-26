@@ -51,11 +51,6 @@ namespace TPBuilder
             }
         }
     
-        public void UpdateAirport(int index)
-        {
-           
-        }
-
         public void DeleteAirport(int index)
         {
             try
@@ -89,11 +84,6 @@ namespace TPBuilder
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = aircraftFactory.CreateAircraft();
             Aircrafts.Add(aircraft);
-        }
-
-        public void UpdateAircraft()
-        {
-   
         }
 
         public void DeleteAircraft(int index)

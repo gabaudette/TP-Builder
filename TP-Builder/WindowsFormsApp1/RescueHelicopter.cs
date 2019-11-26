@@ -2,8 +2,6 @@
 {
     public class RescueHelicopter : Aircraft
     {
-        public RescueHelicopter(string name) : base(name)
-        {
-        }
+        public RescueHelicopter(string name) : base(name){}
     }
 }
