@@ -11,7 +11,7 @@
                 aircraftFactory = new AircraftFactory();
             return aircraftFactory;
         }
-        //type?
+
         public static Aircraft CreateAircraft(string name, string type)
         {
             Aircraft aircraft = null;
