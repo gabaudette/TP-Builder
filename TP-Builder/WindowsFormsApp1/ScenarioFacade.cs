@@ -65,10 +65,11 @@ namespace TPBuilder
 
         public bool ValidAirport(string name)
         {
-            if (Airports.Count > 0) {
-            foreach (Airport airport in Airports)
-                if (airport.Name == name)
-                    return false;
+            if (Airports.Count > 0)
+            {
+                foreach (Airport airport in Airports)
+                    if (airport.Name == name)
+                        return false;
             }
             return true;
         }
