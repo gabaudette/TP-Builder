@@ -128,6 +128,5 @@ namespace TPBuilder
             positionGUI = new PositionGUI();
             positionGUI.Show();
         }
-
     }
 }

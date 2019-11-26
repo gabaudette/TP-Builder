@@ -6,7 +6,6 @@ namespace TPBuilder
     {
         private static ScenarioFacade instance = null;
         private AircraftFactory aircraftFactory;
-        //private Airport airport;
 
         public List<Aircraft> Aircrafts { get; private set; }
         public List<Airport> Airports { get; private set; }
