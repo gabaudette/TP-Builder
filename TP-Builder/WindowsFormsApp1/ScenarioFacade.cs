@@ -79,7 +79,6 @@ namespace TPBuilder
             return true;
         }
 
-        // TODO : Aircraft Type ?
         public void AddAircraft(string name, string type)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
