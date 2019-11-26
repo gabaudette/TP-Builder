@@ -30,11 +30,8 @@ namespace TPBuilder
                 lsvAirport.Columns.Add("Airport name");
                 lsvAirport.Columns.Add("Positions");
                 lsvAirport.View = View.Details;
-                
-                    lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text}));
-                    Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
-                
-                
+                lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text}));
+                Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
                 ResetAirportControls();
             }
         }
