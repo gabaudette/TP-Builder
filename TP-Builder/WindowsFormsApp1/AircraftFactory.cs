@@ -3,7 +3,7 @@
     public sealed class AircraftFactory
     {
         private static AircraftFactory aircraftFactory;
-        private AircraftFactory(){}
+        private AircraftFactory() { }
 
         public static AircraftFactory GetAircraftFactory()
         {
