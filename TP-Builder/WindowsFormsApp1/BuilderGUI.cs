@@ -17,7 +17,9 @@ namespace TPBuilder
 
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
-
+            string[] aircraftTypes = new string[] { "Cargo Plane", "Observer Plane", "Passenger Plane", "Rescue Helicopter", "Water Bomber" };
+            cmbAircraftType.Items.AddRange(aircraftTypes);
+            cmbAircraftType.SelectedIndex = 0;
         }
 
         private void BtnAddAirport_Click(object sender, EventArgs e)
