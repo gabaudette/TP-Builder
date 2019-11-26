@@ -6,7 +6,7 @@
         public int X { get; private set; }
         public int Y { get; private set; }
 
-        public Airport(){}
+        public Airport() { }
         public Airport(string name)
         {
             Name = name;
