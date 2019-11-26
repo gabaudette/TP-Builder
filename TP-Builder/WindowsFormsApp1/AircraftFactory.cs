@@ -17,19 +17,19 @@
             Aircraft aircraft = null;
             switch (type)
             {
-                case "CargoPlane":
+                case "Cargo Plane":
                     aircraft = new CargoPlane(name);
                     break;
-                case "ObserverPlane":
+                case "Observer Plane":
                     aircraft = new ObserverPlane(name);
                     break;
-                case "PassengerPlane":
+                case "Passenger Plane":
                     aircraft = new PassengerPlane(name);
                     break;
-                case "RescueHelicopter":
+                case "Rescue Helicopter":
                     aircraft = new RescueHelicopter(name);
                     break;
-                case "WaterBomber":
+                case "Water Bomber":
                     aircraft = new WaterBomber(name);
                     break;
             }

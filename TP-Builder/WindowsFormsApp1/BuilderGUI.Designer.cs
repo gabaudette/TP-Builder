@@ -433,6 +433,7 @@
             this.cmbAircraftType.Name = "cmbAircraftType";
             this.cmbAircraftType.Size = new System.Drawing.Size(110, 28);
             this.cmbAircraftType.TabIndex = 45;
+            this.cmbAircraftType.SelectionChangeCommitted += new System.EventHandler(this.CmbAircraftType_SelectionChangeCommitted);
             // 
             // BuilderGUI
             // 

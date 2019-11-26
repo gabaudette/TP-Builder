@@ -83,6 +83,11 @@ namespace TPBuilder
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateAircraft(name,type);
             Aircrafts.Add(aircraft);
+            foreach (Aircraft air in Aircrafts)
+            {
+                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            }
+           
         }
 
         public void DeleteAircraft(int index)

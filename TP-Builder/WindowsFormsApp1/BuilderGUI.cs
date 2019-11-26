@@ -22,13 +22,15 @@ namespace TPBuilder
             lsvAircraft.Columns.Add("Aircraft Type");
             lsvAircraft.View = View.Details;
 
+            cmbAircraftType.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
-            string[] aircraftTypes = new string[] { "Cargo Plane", "Observer Plane", "Passenger Plane", "Rescue Helicopter", "Water Bomber" };
+            string[] aircraftTypes = new string[] { "Cargo Plane", "Passenger Plane", "Observer Plane","Rescue Helicopter", "Water Bomber" };
             cmbAircraftType.Items.AddRange(aircraftTypes);
             cmbAircraftType.SelectedIndex = 0;
+            CheckAircraftInputType();
         }
 
         private void BtnAddAirport_Click(object sender, EventArgs e)
@@ -130,6 +132,22 @@ namespace TPBuilder
             return true;
         }
 
+        private void CheckAircraftInputType()
+        {
+            if (cmbAircraftType.SelectedIndex == 0 || cmbAircraftType.SelectedIndex == 1)
+            {
+                tbLoad.Enabled = true;
+                tbUnload.Enabled = true;
+            }
+            else
+            {
+                tbLoad.Clear();
+                tbUnload.Clear();
+                tbLoad.Enabled = false;
+                tbUnload.Enabled = false;
+            }
+        }
+
         private void ResetAircraftControls()
         {
             tbAircraftName.Clear();
@@ -146,6 +164,11 @@ namespace TPBuilder
         {
             positionGUI = new PositionGUI();
             positionGUI.Show();
+        }
+
+        private void CmbAircraftType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CheckAircraftInputType();
         }
     }
 }
