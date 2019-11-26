@@ -35,10 +35,5 @@
             }
             return aircraft;
         }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }
