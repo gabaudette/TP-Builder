@@ -73,10 +73,10 @@ namespace TPBuilder
             return true;
         }
 
-        public bool ValidAirportPostion(int x, int y)
-        {
-            return true;
-        }
+        //public bool ValidAirportPostion(int x, int y)
+        //{
+        //    return true;
+        //}
 
         public void AddCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weigth)
         {
