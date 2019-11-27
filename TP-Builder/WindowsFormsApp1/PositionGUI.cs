@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace TPBuilder
@@ -14,21 +13,21 @@ namespace TPBuilder
 
         private void PbMap_Click(object sender, EventArgs e)
         {
-            MouseEventArgs me = (MouseEventArgs) e;
-       
+            MouseEventArgs me = (MouseEventArgs)e;
 
-            double x = (me.X * 360) / (pbMap.Width * 1.5) - 180;
-            double y = (me.Y * 180) / (pbMap.Height * 1.5) - 90;
+            double x = (double)(me.X * 180) / pbMap.Width - 90;
+            double y = (double)(me.Y * 180) / (pbMap.Height) - 90;
 
             double degX = Math.Floor(x);
+            double degY = Math.Floor(y);
 
             double tempX = x - degX;
-            //double degY = Math.Floor(y);
+            double tempY = y - degY;
 
-            double min = Math.Abs(tempX * 60);
+            double minX = Math.Abs(tempX * 60);
+            double minY = Math.Abs(tempY * 60);
           
-
-            Console.WriteLine($"'MIN: {min}, Deg X: {degX}");
+            Console.WriteLine($"'minX: {minX}, minY:{minY} X: {x}, Y: {y}");
             
         }
 
