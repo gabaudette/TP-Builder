@@ -17,7 +17,7 @@ namespace TPBuilder
             MouseEventArgs me = (MouseEventArgs) e;
             Point point = me.Location;
             Console.WriteLine($"X: {point.X}, Y: {point.Y}");
-            //TODO : Find formula LAT/LONG
+            
         }
 
         private void PositionGUI_Load(object sender, EventArgs e)
