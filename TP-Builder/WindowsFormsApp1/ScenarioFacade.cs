@@ -7,6 +7,7 @@ namespace TPBuilder
     public sealed class ScenarioFacade
     {
         private static ScenarioFacade instance = null;
+
         private AircraftFactory aircraftFactory;
 
         public List<Aircraft> Aircrafts { get; private set; }

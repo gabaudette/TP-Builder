@@ -4,6 +4,7 @@
     {
         public int LoadingTime { get; protected set; }
         public int UnloadingTime { get; protected set; }
+        public PassengerAircraft() { }
 
         public PassengerAircraft(string name, int speed, int maintenance, int loadingTime, int unloadingTime) : base(name, speed , maintenance)
         {
