@@ -2,7 +2,7 @@
 {
     public class CargoPlane : PassengerAircraft
     {
-        public int Weight { get; private set; }
+        public int Weight { get; set; }
 
         public CargoPlane() { }
 

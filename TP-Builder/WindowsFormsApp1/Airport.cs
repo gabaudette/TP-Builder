@@ -2,9 +2,9 @@
 {
     public class Airport
     {
-        public string Name { get; private set; }
-        public int X { get; private set; }
-        public int Y { get; private set; }
+        public string Name { get;  set; }
+        public int X { get;  set; }
+        public int Y { get;  set; }
 
         public Airport() { }
         public Airport(string name)

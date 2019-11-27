@@ -1,9 +1,10 @@
 ﻿namespace TPBuilder
 {
+    
     public class WaterBomber : Aircraft
     {
-        public int WaterCapacity { get; private set; }
-        public int DroppingTime { get; private set; }
+        public int WaterCapacity { get; set; }
+        public int DroppingTime { get; set; }
         
         public WaterBomber() { }
 

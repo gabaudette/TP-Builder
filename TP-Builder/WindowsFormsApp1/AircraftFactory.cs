@@ -1,5 +1,8 @@
-﻿namespace TPBuilder
+﻿using System.Xml.Serialization;
+
+namespace TPBuilder
 {
+   
     public sealed class AircraftFactory
     {
         private static AircraftFactory aircraftFactory;

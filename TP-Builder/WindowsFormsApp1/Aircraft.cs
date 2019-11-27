@@ -1,10 +1,17 @@
-﻿namespace TPBuilder
+﻿using System.Xml.Serialization;
+
+namespace TPBuilder
 {
+    [XmlInclude(typeof(CargoPlane))]
+    [XmlInclude(typeof(ObserverPlane))]
+    [XmlInclude(typeof(PassengerPlane))]
+    [XmlInclude(typeof(WaterBomber))]
+    [XmlInclude(typeof(RescueHelicopter))]
     public abstract class Aircraft
     {
-        public string Name { get; protected set; }
-        public int Speed { get; protected set; }
-        public int Maintenance { get; protected set; }
+        public string Name { get; set; }
+        public int Speed { get; set; }
+        public int Maintenance { get; set; }
 
         public Aircraft() { }
         public Aircraft(string name, int speed, int maintenance)

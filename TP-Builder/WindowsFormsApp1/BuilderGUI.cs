@@ -214,5 +214,10 @@ namespace TPBuilder
         {
             CheckAircraftInputType();
         }
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            ScenarioController.Serialize();
+        }
     }
 }

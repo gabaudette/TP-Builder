@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace TPBuilder
 {
@@ -11,6 +13,15 @@ namespace TPBuilder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BuilderGUI());
+        }
+
+        static public void Serialize()
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(ScenarioFacade));
+            using (StreamWriter wr = new StreamWriter("Scenario.xml"))
+            {
+                xs.Serialize(wr, ScenarioFacade.Instance);
+            }
         }
     }
 }

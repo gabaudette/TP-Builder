@@ -6,12 +6,14 @@ namespace TPBuilder
     [XmlRoot("ScenarioFacade")]
     public sealed class ScenarioFacade
     {
+        [XmlIgnore]
         private static ScenarioFacade instance = null;
 
+        [XmlIgnore]
         private AircraftFactory aircraftFactory;
 
-        public List<Aircraft> Aircrafts { get; private set; }
-        public List<Airport> Airports { get; private set; }
+        public List<Aircraft> Aircrafts { get; set; }
+        public List<Airport> Airports { get; set; }
 
 
         private ScenarioFacade()

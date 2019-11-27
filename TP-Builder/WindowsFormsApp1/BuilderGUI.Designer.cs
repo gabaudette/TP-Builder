@@ -76,7 +76,7 @@
             this.lblAirportName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAirportName.Location = new System.Drawing.Point(9, 145);
             this.lblAirportName.Name = "lblAirportName";
-            this.lblAirportName.Size = new System.Drawing.Size(38, 13);
+            this.lblAirportName.Size = new System.Drawing.Size(58, 20);
             this.lblAirportName.TabIndex = 2;
             this.lblAirportName.Text = "Name:";
             // 
@@ -86,7 +86,7 @@
             this.lblAirportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAirportTitle.Location = new System.Drawing.Point(16, 8);
             this.lblAirportTitle.Name = "lblAirportTitle";
-            this.lblAirportTitle.Size = new System.Drawing.Size(57, 17);
+            this.lblAirportTitle.Size = new System.Drawing.Size(82, 25);
             this.lblAirportTitle.TabIndex = 4;
             this.lblAirportTitle.Text = "Airport";
             // 
@@ -96,7 +96,7 @@
             this.lblAircraftTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftTitle.Location = new System.Drawing.Point(16, 216);
             this.lblAircraftTitle.Name = "lblAircraftTitle";
-            this.lblAircraftTitle.Size = new System.Drawing.Size(61, 17);
+            this.lblAircraftTitle.Size = new System.Drawing.Size(88, 25);
             this.lblAircraftTitle.TabIndex = 5;
             this.lblAircraftTitle.Text = "Aircraft";
             // 
@@ -106,7 +106,7 @@
             this.lblMinPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinPassenger.Location = new System.Drawing.Point(284, 145);
             this.lblMinPassenger.Name = "lblMinPassenger";
-            this.lblMinPassenger.Size = new System.Drawing.Size(82, 13);
+            this.lblMinPassenger.Size = new System.Drawing.Size(130, 20);
             this.lblMinPassenger.TabIndex = 6;
             this.lblMinPassenger.Text = "MinPassengers:";
             // 
@@ -116,7 +116,7 @@
             this.lblMaxPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxPassenger.Location = new System.Drawing.Point(395, 145);
             this.lblMaxPassenger.Name = "lblMaxPassenger";
-            this.lblMaxPassenger.Size = new System.Drawing.Size(85, 13);
+            this.lblMaxPassenger.Size = new System.Drawing.Size(134, 20);
             this.lblMaxPassenger.TabIndex = 7;
             this.lblMaxPassenger.Text = "MaxPassengers:";
             // 
@@ -126,7 +126,7 @@
             this.lblMinMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinMarchandise.Location = new System.Drawing.Point(522, 145);
             this.lblMinMarchandise.Name = "lblMinMarchandise";
-            this.lblMinMarchandise.Size = new System.Drawing.Size(88, 13);
+            this.lblMinMarchandise.Size = new System.Drawing.Size(137, 20);
             this.lblMinMarchandise.TabIndex = 8;
             this.lblMinMarchandise.Text = "MinMarchandise:";
             // 
@@ -136,7 +136,7 @@
             this.lblMaxMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxMarchandise.Location = new System.Drawing.Point(650, 145);
             this.lblMaxMarchandise.Name = "lblMaxMarchandise";
-            this.lblMaxMarchandise.Size = new System.Drawing.Size(91, 13);
+            this.lblMaxMarchandise.Size = new System.Drawing.Size(141, 20);
             this.lblMaxMarchandise.TabIndex = 9;
             this.lblMaxMarchandise.Text = "MaxMarchandise:";
             // 
@@ -144,35 +144,35 @@
             // 
             this.tbAirportName.Location = new System.Drawing.Point(56, 142);
             this.tbAirportName.Name = "tbAirportName";
-            this.tbAirportName.Size = new System.Drawing.Size(60, 20);
+            this.tbAirportName.Size = new System.Drawing.Size(60, 26);
             this.tbAirportName.TabIndex = 10;
             // 
             // tbMinPassenger
             // 
             this.tbMinPassenger.Location = new System.Drawing.Point(364, 142);
             this.tbMinPassenger.Name = "tbMinPassenger";
-            this.tbMinPassenger.Size = new System.Drawing.Size(25, 20);
+            this.tbMinPassenger.Size = new System.Drawing.Size(25, 26);
             this.tbMinPassenger.TabIndex = 12;
             // 
             // tbMaxPassenger
             // 
             this.tbMaxPassenger.Location = new System.Drawing.Point(486, 142);
             this.tbMaxPassenger.Name = "tbMaxPassenger";
-            this.tbMaxPassenger.Size = new System.Drawing.Size(25, 20);
+            this.tbMaxPassenger.Size = new System.Drawing.Size(25, 26);
             this.tbMaxPassenger.TabIndex = 13;
             // 
             // tbMinMarchandise
             // 
             this.tbMinMarchandise.Location = new System.Drawing.Point(616, 142);
             this.tbMinMarchandise.Name = "tbMinMarchandise";
-            this.tbMinMarchandise.Size = new System.Drawing.Size(25, 20);
+            this.tbMinMarchandise.Size = new System.Drawing.Size(25, 26);
             this.tbMinMarchandise.TabIndex = 14;
             // 
             // tbMaxMarchandise
             // 
             this.tbMaxMarchandise.Location = new System.Drawing.Point(747, 142);
             this.tbMaxMarchandise.Name = "tbMaxMarchandise";
-            this.tbMaxMarchandise.Size = new System.Drawing.Size(25, 20);
+            this.tbMaxMarchandise.Size = new System.Drawing.Size(25, 26);
             this.tbMaxMarchandise.TabIndex = 15;
             // 
             // btnAddAirport
@@ -214,35 +214,35 @@
             // 
             this.tbMaintenance.Location = new System.Drawing.Point(272, 348);
             this.tbMaintenance.Name = "tbMaintenance";
-            this.tbMaintenance.Size = new System.Drawing.Size(95, 20);
+            this.tbMaintenance.Size = new System.Drawing.Size(95, 26);
             this.tbMaintenance.TabIndex = 28;
             // 
             // tbUnload
             // 
             this.tbUnload.Location = new System.Drawing.Point(476, 384);
             this.tbUnload.Name = "tbUnload";
-            this.tbUnload.Size = new System.Drawing.Size(95, 20);
+            this.tbUnload.Size = new System.Drawing.Size(95, 26);
             this.tbUnload.TabIndex = 27;
             // 
             // tbLoad
             // 
             this.tbLoad.Location = new System.Drawing.Point(476, 348);
             this.tbLoad.Name = "tbLoad";
-            this.tbLoad.Size = new System.Drawing.Size(95, 20);
+            this.tbLoad.Size = new System.Drawing.Size(95, 26);
             this.tbLoad.TabIndex = 26;
             // 
             // tbSpeed
             // 
             this.tbSpeed.Location = new System.Drawing.Point(272, 384);
             this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(95, 20);
+            this.tbSpeed.Size = new System.Drawing.Size(95, 26);
             this.tbSpeed.TabIndex = 25;
             // 
             // tbAircraftName
             // 
             this.tbAircraftName.Location = new System.Drawing.Point(56, 348);
             this.tbAircraftName.Name = "tbAircraftName";
-            this.tbAircraftName.Size = new System.Drawing.Size(95, 20);
+            this.tbAircraftName.Size = new System.Drawing.Size(95, 26);
             this.tbAircraftName.TabIndex = 23;
             // 
             // lblAircraftMaintenance
@@ -251,7 +251,7 @@
             this.lblAircraftMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftMaintenance.Location = new System.Drawing.Point(168, 351);
             this.lblAircraftMaintenance.Name = "lblAircraftMaintenance";
-            this.lblAircraftMaintenance.Size = new System.Drawing.Size(98, 13);
+            this.lblAircraftMaintenance.Size = new System.Drawing.Size(151, 20);
             this.lblAircraftMaintenance.TabIndex = 22;
             this.lblAircraftMaintenance.Text = "Maintenance Time:";
             // 
@@ -261,7 +261,7 @@
             this.lblAircraftUnload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftUnload.Location = new System.Drawing.Point(375, 387);
             this.lblAircraftUnload.Name = "lblAircraftUnload";
-            this.lblAircraftUnload.Size = new System.Drawing.Size(84, 13);
+            this.lblAircraftUnload.Size = new System.Drawing.Size(130, 20);
             this.lblAircraftUnload.TabIndex = 21;
             this.lblAircraftUnload.Text = "Unloading Time:";
             // 
@@ -271,7 +271,7 @@
             this.lblAircraftLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftLoad.Location = new System.Drawing.Point(386, 351);
             this.lblAircraftLoad.Name = "lblAircraftLoad";
-            this.lblAircraftLoad.Size = new System.Drawing.Size(74, 13);
+            this.lblAircraftLoad.Size = new System.Drawing.Size(115, 20);
             this.lblAircraftLoad.TabIndex = 20;
             this.lblAircraftLoad.Text = "Loading Time:";
             // 
@@ -281,7 +281,7 @@
             this.lblAircraftSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftSpeed.Location = new System.Drawing.Point(168, 387);
             this.lblAircraftSpeed.Name = "lblAircraftSpeed";
-            this.lblAircraftSpeed.Size = new System.Drawing.Size(41, 13);
+            this.lblAircraftSpeed.Size = new System.Drawing.Size(61, 20);
             this.lblAircraftSpeed.TabIndex = 19;
             this.lblAircraftSpeed.Text = "Speed:";
             // 
@@ -291,7 +291,7 @@
             this.lblAircraftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftType.Location = new System.Drawing.Point(15, 387);
             this.lblAircraftType.Name = "lblAircraftType";
-            this.lblAircraftType.Size = new System.Drawing.Size(34, 13);
+            this.lblAircraftType.Size = new System.Drawing.Size(50, 20);
             this.lblAircraftType.TabIndex = 18;
             this.lblAircraftType.Text = "Type:";
             // 
@@ -301,7 +301,7 @@
             this.lblAircraftName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAircraftName.Location = new System.Drawing.Point(12, 351);
             this.lblAircraftName.Name = "lblAircraftName";
-            this.lblAircraftName.Size = new System.Drawing.Size(38, 13);
+            this.lblAircraftName.Size = new System.Drawing.Size(58, 20);
             this.lblAircraftName.TabIndex = 17;
             this.lblAircraftName.Text = "Name:";
             // 
@@ -320,6 +320,7 @@
             this.btnGenerate.TabIndex = 36;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // Positions
             // 
@@ -327,7 +328,7 @@
             this.Positions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Positions.Location = new System.Drawing.Point(123, 145);
             this.Positions.Name = "Positions";
-            this.Positions.Size = new System.Drawing.Size(52, 13);
+            this.Positions.Size = new System.Drawing.Size(83, 20);
             this.Positions.TabIndex = 40;
             this.Positions.Text = "Positions:";
             // 
@@ -353,7 +354,7 @@
             // 
             this.tbPositions.Location = new System.Drawing.Point(177, 142);
             this.tbPositions.Name = "tbPositions";
-            this.tbPositions.Size = new System.Drawing.Size(56, 20);
+            this.tbPositions.Size = new System.Drawing.Size(56, 26);
             this.tbPositions.TabIndex = 43;
             // 
             // btnMap
@@ -371,7 +372,7 @@
             this.cmbAircraftType.FormattingEnabled = true;
             this.cmbAircraftType.Location = new System.Drawing.Point(56, 384);
             this.cmbAircraftType.Name = "cmbAircraftType";
-            this.cmbAircraftType.Size = new System.Drawing.Size(95, 21);
+            this.cmbAircraftType.Size = new System.Drawing.Size(95, 28);
             this.cmbAircraftType.TabIndex = 45;
             this.cmbAircraftType.SelectionChangeCommitted += new System.EventHandler(this.CmbAircraftType_SelectionChangeCommitted);
             // 
@@ -379,7 +380,7 @@
             // 
             this.tbCapacity.Location = new System.Drawing.Point(652, 384);
             this.tbCapacity.Name = "tbCapacity";
-            this.tbCapacity.Size = new System.Drawing.Size(95, 20);
+            this.tbCapacity.Size = new System.Drawing.Size(95, 26);
             this.tbCapacity.TabIndex = 47;
             // 
             // lblCapacity
@@ -388,7 +389,7 @@
             this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCapacity.Location = new System.Drawing.Point(593, 387);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(51, 13);
+            this.lblCapacity.Size = new System.Drawing.Size(79, 20);
             this.lblCapacity.TabIndex = 46;
             this.lblCapacity.Text = "Capacity:";
             // 
@@ -396,7 +397,7 @@
             // 
             this.tbWeigth.Location = new System.Drawing.Point(652, 348);
             this.tbWeigth.Name = "tbWeigth";
-            this.tbWeigth.Size = new System.Drawing.Size(95, 20);
+            this.tbWeigth.Size = new System.Drawing.Size(95, 26);
             this.tbWeigth.TabIndex = 49;
             // 
             // lblWeigth
@@ -405,7 +406,7 @@
             this.lblWeigth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeigth.Location = new System.Drawing.Point(593, 351);
             this.lblWeigth.Name = "lblWeigth";
-            this.lblWeigth.Size = new System.Drawing.Size(44, 13);
+            this.lblWeigth.Size = new System.Drawing.Size(66, 20);
             this.lblWeigth.TabIndex = 48;
             this.lblWeigth.Text = "Weigth:";
             // 
@@ -413,7 +414,7 @@
             // 
             this.tbWaterCapacity.Location = new System.Drawing.Point(864, 348);
             this.tbWaterCapacity.Name = "tbWaterCapacity";
-            this.tbWaterCapacity.Size = new System.Drawing.Size(95, 20);
+            this.tbWaterCapacity.Size = new System.Drawing.Size(95, 26);
             this.tbWaterCapacity.TabIndex = 51;
             // 
             // lblWaterCapacity
@@ -422,7 +423,7 @@
             this.lblWaterCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWaterCapacity.Location = new System.Drawing.Point(775, 351);
             this.lblWaterCapacity.Name = "lblWaterCapacity";
-            this.lblWaterCapacity.Size = new System.Drawing.Size(83, 13);
+            this.lblWaterCapacity.Size = new System.Drawing.Size(129, 20);
             this.lblWaterCapacity.TabIndex = 50;
             this.lblWaterCapacity.Text = "Water Capacity:";
             // 
@@ -430,7 +431,7 @@
             // 
             this.tbDropTime.Location = new System.Drawing.Point(864, 384);
             this.tbDropTime.Name = "tbDropTime";
-            this.tbDropTime.Size = new System.Drawing.Size(95, 20);
+            this.tbDropTime.Size = new System.Drawing.Size(95, 26);
             this.tbDropTime.TabIndex = 53;
             // 
             // label1
@@ -439,13 +440,13 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(775, 387);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 52;
             this.label1.Text = "Dropping Time:";
             // 
             // BuilderGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 621);
             this.Controls.Add(this.tbDropTime);
