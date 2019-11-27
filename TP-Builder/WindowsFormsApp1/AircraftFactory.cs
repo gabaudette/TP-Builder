@@ -12,9 +12,9 @@
             return aircraftFactory;
         }
 
-        public static Aircraft CreateCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weigth)
+        public static Aircraft CreateCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weight)
         {
-            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weigth);
+            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
         }
 
         public static Aircraft CreatePassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime , int capacity)
