@@ -15,7 +15,6 @@ namespace TPBuilder
         public List<Aircraft> Aircrafts { get; set; }
         public List<Airport> Airports { get; set; }
 
-
         private ScenarioFacade()
         {
             Airports = new List<Airport>();
