@@ -2,6 +2,6 @@
 {
     public class ObserverPlane : Aircraft
     {
-        public ObserverPlane(string name, int speed, int maintenance) : base(name , speed, maintenance) { }
+        public ObserverPlane(string name, int speed, int maintenance) : base(name, speed, maintenance) { }
     }
 }
