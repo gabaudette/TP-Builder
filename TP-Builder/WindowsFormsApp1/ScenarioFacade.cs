@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace TPBuilder
 {
+    [XmlRoot("ScenarioFacade")]
     public sealed class ScenarioFacade
     {
         private static ScenarioFacade instance = null;
