@@ -156,30 +156,39 @@ namespace TPBuilder
             {
                 tbWeigth.Enabled = true;
                 tbCapacity.Enabled = false;
+                tbDropTime.Enabled = false;
+                tbWaterCapacity.Enabled = false;
+                tbLoad.Enabled = true;
+                tbUnload.Enabled = true;
             }
 
-            //@Aircraft Type: Passenger Plane & Water Bomber
-            else if(cmbAircraftType.SelectedIndex == 1 || cmbAircraftType.SelectedIndex == 4)
+            //@Aircraft Type: Passenger Plane
+            else if(cmbAircraftType.SelectedIndex == 1)
             {
                 tbCapacity.Enabled = true;
                 tbWeigth.Enabled = false;
-            }
-
-            //@Aircraft Type: CargoPlane & Passenger Plane
-            else if (cmbAircraftType.SelectedIndex == 0 || cmbAircraftType.SelectedIndex == 1)
-            {
                 tbLoad.Enabled = true;
                 tbUnload.Enabled = true;
+            }
+
+            else if(cmbAircraftType.SelectedIndex == 4)
+            {
+                tbDropTime.Enabled = true;
+                tbWaterCapacity.Enabled = true;
             }
 
             else
             {
                 tbLoad.Clear();
                 tbUnload.Clear();
+                tbWaterCapacity.Clear();
+                tbDropTime.Clear();
                 tbLoad.Enabled = false;
                 tbUnload.Enabled = false;
                 tbCapacity.Enabled = false;
                 tbWeigth.Enabled = false;
+                tbDropTime.Enabled = false;
+                tbWaterCapacity.Enabled = false;
             }
         }
 

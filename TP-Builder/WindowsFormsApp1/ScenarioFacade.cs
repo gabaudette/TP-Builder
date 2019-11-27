@@ -31,23 +31,13 @@ namespace TPBuilder
 
         public void CreateAiport(string name, int x, int y)
         {
-
             if (ValidAirport(name))
             {
-                if (ValidAirportPostion(x, y))
-                {
-                    Airports.Add(new Airport(name));
-                    System.Console.WriteLine($"Airport <{name}> added at {x}, {y} Aiports List {Airports.Count}");
-                }
-                else
-                {
-                    System.Console.WriteLine($"Error : {x}, {y} are not valid positions ");
-                }
+                Airports.Add(new Airport(name));
+                System.Console.WriteLine($"Airport <{name}> added at {x}, {y} Aiports List {Airports.Count}");
             }
             else
-            {
                 System.Console.WriteLine($"Error : Airport : {name} already exist!");
-            }
         }
     
         public void DeleteAirport(int index)
@@ -73,16 +63,14 @@ namespace TPBuilder
             return true;
         }
 
-        public void AddCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weigth)
+        public void AddCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weight)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weigth);
+            Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
-            {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
-            }
         }
 
         public void AddPassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
@@ -92,9 +80,7 @@ namespace TPBuilder
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
-            {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
-            }
         }
 
         public void AddWaterBomber(string name, int speed, int maintenance, int droppingTime, int waterCapacity)
@@ -104,9 +90,7 @@ namespace TPBuilder
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
-            {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
-            }
         }
 
         public void AddObserverPlane(string name , int speed, int maintenance)
@@ -116,9 +100,7 @@ namespace TPBuilder
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
-            {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
-            }
         }
 
         public void AddRescueHelicopter(string name, int speed, int maintenance)
@@ -128,9 +110,7 @@ namespace TPBuilder
             Aircrafts.Add(aircraft);
             //!For testing only REMOVE
             foreach (Aircraft air in Aircrafts)
-            {
                 System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
-            }
         }
 
         public void DeleteAircraft(int index)
