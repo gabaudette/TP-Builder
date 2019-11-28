@@ -33,12 +33,12 @@ namespace TPBuilder
             }
         }
 
-        public void CreateAiport(string name, int x, int y)
+        public void CreateAiport(string name, string position, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
             if (ValidAirport(name))
             {
-                Airports.Add(new Airport(name));
-                System.Console.WriteLine($"Airport <{name}> added at {x}, {y} Aiports List {Airports.Count}");
+                Airports.Add(new Airport(name, position, minPassenger, maxPassenger, minMarchandise, maxMarchandise));
+                System.Console.WriteLine($"Airport <{name}> added at {position} Aiports List {Airports.Count}");
             }
             else
                 System.Console.WriteLine($"Error : Airport : {name} already exist!");

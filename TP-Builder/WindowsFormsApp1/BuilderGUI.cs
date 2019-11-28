@@ -14,10 +14,18 @@ namespace TPBuilder
             InitializeComponent();
             scenarioFacade = ScenarioFacade.Instance;
 
+            
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");
+            lsvAirport.Columns.Add("Min. Passenger");
+            lsvAirport.Columns.Add("Max. Passenger");
+            lsvAirport.Columns.Add("Min. Marchandise");
+            lsvAirport.Columns.Add("Max. Marchandise");
             lsvAirport.View = View.Details;
 
+            for (int i = 0; i < lsvAirport.Columns.Count; i++)
+                lsvAirport.Columns[i].Width = 100;
+           
             lsvAircraft.Columns.Add("Aircraft Name");
             lsvAircraft.Columns.Add("Aircraft Type");
             lsvAircraft.View = View.Details;
@@ -27,7 +35,7 @@ namespace TPBuilder
 
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
-            string[] aircraftTypes = new string[] { "Cargo Plane", "Passenger Plane", "Observer Plane","Rescue Helicopter", "Water Bomber" };
+            string[] aircraftTypes = new string[] { "Cargo Plane", "Passenger Plane", "Observer Plane", "Rescue Helicopter", "Water Bomber" };
             cmbAircraftType.Items.AddRange(aircraftTypes);
             cmbAircraftType.SelectedIndex = 0;
             CheckAircraftInputType();
@@ -37,8 +45,8 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
-                scenarioFacade.CreateAiport(tbAirportName.Text, 1 ,1);
-                lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text}));
+                scenarioFacade.CreateAiport(tbAirportName.Text, tbPositions.Text, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text, tbMinPassenger.Text, tbMaxPassenger.Text, tbMinMarchandise.Text, tbMaxMarchandise.Text }));
                 Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
                 ResetAirportControls();
             }
@@ -86,13 +94,7 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
-
-            if (Regex.IsMatch(tbAirportName.Text, @"\d"))
-            {
-                Console.WriteLine("Validation Error: Airport name cannot contain numeric value");
-                return false;
-            }
-
+            
             if (tbPositions.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
@@ -113,12 +115,6 @@ namespace TPBuilder
             if (tbAircraftName.Text.Length < 3 || tbAircraftName.Text.Length > 50)
             {
                 Console.WriteLine("Validation Error: Aircraft name must be between 3 and 50 in length");
-                return false;
-            }
-
-            if (Regex.IsMatch(tbAircraftName.Text, @"\d"))
-            {
-                Console.WriteLine("Validation Error: Aircraft name cannot contain numeric value");
                 return false;
             }
 
