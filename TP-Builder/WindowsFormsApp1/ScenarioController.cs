@@ -15,10 +15,10 @@ namespace TPBuilder
             Application.Run(new BuilderGUI());
         }
 
-        static public void Serialize()
+        static public void Serialize(string filename)
         {
             XmlSerializer xs = new XmlSerializer(typeof(ScenarioFacade));
-            using (StreamWriter wr = new StreamWriter("Scenario.xml"))
+            using (StreamWriter wr = new StreamWriter(filename))
             {
                 xs.Serialize(wr, ScenarioFacade.Instance);
             }

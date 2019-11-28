@@ -14,7 +14,6 @@ namespace TPBuilder
             InitializeComponent();
             scenarioFacade = ScenarioFacade.Instance;
 
-            
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");
             lsvAirport.Columns.Add("Min. Passenger");
@@ -25,7 +24,7 @@ namespace TPBuilder
 
             for (int i = 0; i < lsvAirport.Columns.Count; i++)
                 lsvAirport.Columns[i].Width = 100;
-           
+
             lsvAircraft.Columns.Add("Aircraft Name");
             lsvAircraft.Columns.Add("Aircraft Type");
             lsvAircraft.View = View.Details;
@@ -59,7 +58,7 @@ namespace TPBuilder
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        scenarioFacade.AddCargoPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeigth.Text));
+                        scenarioFacade.AddCargoPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
                         break;
                     case 1:
                         scenarioFacade.AddPassengerPlane(tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
@@ -150,7 +149,7 @@ namespace TPBuilder
             //@Aircraft Type: Cargo Plane
             if (cmbAircraftType.SelectedIndex == 0)
             {
-                tbWeigth.Enabled = true;
+                tbWeight.Enabled = true;
                 tbCapacity.Enabled = false;
                 tbDropTime.Enabled = false;
                 tbWaterCapacity.Enabled = false;
@@ -162,11 +161,12 @@ namespace TPBuilder
             else if(cmbAircraftType.SelectedIndex == 1)
             {
                 tbCapacity.Enabled = true;
-                tbWeigth.Enabled = false;
+                tbWeight.Enabled = false;
                 tbLoad.Enabled = true;
                 tbUnload.Enabled = true;
             }
 
+            //@Aircraft Type: WaterBomber
             else if(cmbAircraftType.SelectedIndex == 4)
             {
                 tbDropTime.Enabled = true;
@@ -182,7 +182,7 @@ namespace TPBuilder
                 tbLoad.Enabled = false;
                 tbUnload.Enabled = false;
                 tbCapacity.Enabled = false;
-                tbWeigth.Enabled = false;
+                tbWeight.Enabled = false;
                 tbDropTime.Enabled = false;
                 tbWaterCapacity.Enabled = false;
             }
@@ -192,6 +192,14 @@ namespace TPBuilder
         {
             tbAircraftName.Clear();
             cmbAircraftType.SelectedIndex = 0;
+            tbMaintenance.Clear();
+            tbSpeed.Clear();
+            tbLoad.Clear();
+            tbUnload.Clear();
+            tbCapacity.Clear();
+            tbWaterCapacity.Clear();
+            tbWeight.Clear();
+            tbDropTime.Clear();
         }
 
         private void ResetAirportControls()
