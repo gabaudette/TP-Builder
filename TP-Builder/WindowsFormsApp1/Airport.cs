@@ -2,20 +2,15 @@
 {
     public class Airport
     {
-        public string Name { get;  set; }
-        public int X { get;  set; }
-        public int Y { get;  set; }
+        public string Name { get; set; }
+        public string Position { get; set; }
 
         public Airport() { }
-        public Airport(string name)
+
+        public Airport(string name, string position)
         {
             Name = name;
-        }
-        public Airport(string name, int x, int y)
-        {
-            Name = name;
-            X = x;
-            Y = y;
+            Position = position;
         }
     }
 }
