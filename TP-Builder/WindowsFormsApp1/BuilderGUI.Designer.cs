@@ -68,8 +68,9 @@
             this.lblWaterCapacity = new System.Windows.Forms.Label();
             this.tbDropTime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbFilename = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAirportName
@@ -492,12 +493,12 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Dropping Time:";
             // 
-            // textBox1
+            // tbFilename
             // 
-            this.textBox1.Location = new System.Drawing.Point(816, 853);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 26);
-            this.textBox1.TabIndex = 54;
+            this.tbFilename.Location = new System.Drawing.Point(816, 853);
+            this.tbFilename.Name = "tbFilename";
+            this.tbFilename.Size = new System.Drawing.Size(306, 26);
+            this.tbFilename.TabIndex = 54;
             // 
             // panel1
             // 
@@ -507,13 +508,24 @@
             this.panel1.Size = new System.Drawing.Size(1866, 10);
             this.panel1.TabIndex = 55;
             // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Location = new System.Drawing.Point(1129, 853);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.TabIndex = 56;
+            this.btnSaveFile.Text = "...";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.BtnSaveFile_Click);
+            // 
             // BuilderGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbFilename);
             this.Controls.Add(this.tbDropTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbWaterCapacity);
@@ -608,8 +620,9 @@
         private System.Windows.Forms.Label lblWaterCapacity;
         private System.Windows.Forms.TextBox tbDropTime;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbFilename;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSaveFile;
     }
 }
 

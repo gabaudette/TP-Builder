@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -221,7 +222,24 @@ namespace TPBuilder
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            ScenarioController.Serialize();
+
+            //ScenarioController.Serialize();
+        }
+
+        private void BtnSaveFile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML Files | *.xml";
+            saveFileDialog.Title = "Save a XML File";
+            saveFileDialog.ShowDialog();
+
+            if(saveFileDialog.FileName != "")
+            {
+                FileStream fileStream = (FileStream)saveFileDialog.OpenFile();
+                FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                tbFilename.Text = fileInfo.Name;
+                fileStream.Close();
+            }
         }
     }
 }
