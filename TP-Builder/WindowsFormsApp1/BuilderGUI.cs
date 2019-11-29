@@ -31,7 +31,9 @@ namespace TPBuilder
             lsvAircraft.View = View.Details;
 
             cmbAircraftType.DropDownStyle = ComboBoxStyle.DropDownList;
+
             tbFilename.Enabled = false;
+            btnGenerate.Enabled = false;
         }
 
         private void BuilderGUI_Load(object sender, EventArgs e)
@@ -240,6 +242,7 @@ namespace TPBuilder
                 FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
                 tbFilename.Text = fileInfo.Name;
                 fileStream.Close();
+                btnGenerate.Enabled = true;
             }
         }
     }
