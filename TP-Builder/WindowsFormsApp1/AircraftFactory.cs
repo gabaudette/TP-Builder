@@ -2,7 +2,6 @@
 
 namespace TPBuilder
 {
-   
     public sealed class AircraftFactory
     {
         private static AircraftFactory aircraftFactory;
