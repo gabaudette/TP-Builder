@@ -510,11 +510,11 @@
             // 
             // btnSaveFile
             // 
-            this.btnSaveFile.Location = new System.Drawing.Point(1129, 853);
+            this.btnSaveFile.Location = new System.Drawing.Point(1128, 847);
             this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 39);
             this.btnSaveFile.TabIndex = 56;
-            this.btnSaveFile.Text = "...";
+            this.btnSaveFile.Text = "Save";
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.BtnSaveFile_Click);
             // 
