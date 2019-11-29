@@ -103,7 +103,6 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
                 return false;
             }
-            
             return true;
         }
 
