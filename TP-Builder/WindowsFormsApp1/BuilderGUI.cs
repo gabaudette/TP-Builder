@@ -57,6 +57,7 @@ namespace TPBuilder
 
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"TEST : {lsvAirport­.SelectedItems}");
             if (ValidateAircraftInput())
             {
                 switch (cmbAircraftType.SelectedIndex)
@@ -78,7 +79,7 @@ namespace TPBuilder
                         break;
                 }
                 lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));
-                Console.WriteLine($"Aircraft: {tbAircraftName.Text} Type: ({cmbAircraftType.SelectedItem.ToString()}) added");
+                Console.WriteLine($"Aircraft: {tbAircraftName.Text} Type: ({cmbAircraftType.SelectedItem.ToString()}) added to Airport ID : {lsvAirport.FocusedItem.Index}");
                 ResetAircraftControls();
             }
         }
