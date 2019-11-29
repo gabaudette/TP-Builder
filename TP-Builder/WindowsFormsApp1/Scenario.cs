@@ -12,13 +12,11 @@ namespace TPBuilder
         [XmlIgnore]
         private AircraftFactory aircraftFactory;
 
-        public List<Aircraft> Aircrafts { get; set; }
         public List<Airport> Airports { get; set; }
 
         private Scenario()
         {
             Airports = new List<Airport>();
-            Aircrafts = new List<Aircraft>();
         }
 
         public static Scenario Instance
@@ -67,66 +65,40 @@ namespace TPBuilder
             return true;
         }
 
-        public void AddCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weight)
+        public void AddCargoPlane(int airportID, string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weight)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
-            Aircrafts.Add(aircraft);
-            //!For testing only REMOVE
-            foreach (Aircraft air in Aircrafts)
-                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void AddPassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
+        public void AddPassengerPlane(int airportID, string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreatePassengerPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
-            Aircrafts.Add(aircraft);
-            //!For testing only REMOVE
-            foreach (Aircraft air in Aircrafts)
-                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void AddWaterBomber(string name, int speed, int maintenance, int droppingTime, int waterCapacity)
+        public void AddWaterBomber(int airportID, string name, int speed, int maintenance, int droppingTime, int waterCapacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateWaterBomber(name, speed, maintenance, droppingTime, waterCapacity);
-            Aircrafts.Add(aircraft);
-            //!For testing only REMOVE
-            foreach (Aircraft air in Aircrafts)
-                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void AddObserverPlane(string name , int speed, int maintenance)
+        public void AddObserverPlane(int airportID, string name , int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateObserverPlane(name, speed, maintenance);
-            Aircrafts.Add(aircraft);
-            //!For testing only REMOVE
-            foreach (Aircraft air in Aircrafts)
-                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void AddRescueHelicopter(string name, int speed, int maintenance)
+        public void AddRescueHelicopter(int airportID, string name, int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed , maintenance);
-            Aircrafts.Add(aircraft);
-            //!For testing only REMOVE
-            foreach (Aircraft air in Aircrafts)
-                System.Console.WriteLine($"Name : {air.Name}, Type: {air.GetType()}");
+            Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void DeleteAircraft(int index)
-        {
-            try
-            {
-                Aircrafts.RemoveAt(index);
-            }
-            catch (System.ArgumentOutOfRangeException outOfRange)
-            {
-                System.Console.WriteLine("Error: " + index + "is out of range", outOfRange.Message);
-            }
-        }
     }
 }
