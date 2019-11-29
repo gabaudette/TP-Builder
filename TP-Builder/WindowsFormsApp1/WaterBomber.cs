@@ -1,6 +1,5 @@
 ﻿namespace TPBuilder
 {
-    
     public class WaterBomber : Aircraft
     {
         public int WaterCapacity { get; set; }
