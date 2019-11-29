@@ -223,7 +223,6 @@ namespace TPBuilder
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-
             if (tbFilename.Text != "")
                 ScenarioController.Serialize(tbFilename.Text);
         }
