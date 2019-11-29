@@ -194,8 +194,8 @@ namespace TPBuilder
 
         private void ResetAircraftControls()
         {
-            tbAircraftName.Clear();
             cmbAircraftType.SelectedIndex = 0;
+            tbAircraftName.Clear();
             tbMaintenance.Clear();
             tbSpeed.Clear();
             tbLoad.Clear();
