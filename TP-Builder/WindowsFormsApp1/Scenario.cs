@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace TPBuilder
 {
-    [XmlRoot("ScenarioFacade")]
+    [XmlRoot("Scenario")]
     public sealed class Scenario
     {
         [XmlIgnore]
