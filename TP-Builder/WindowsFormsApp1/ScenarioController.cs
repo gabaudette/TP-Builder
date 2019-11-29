@@ -17,9 +17,9 @@ namespace TPBuilder
 
         static public void Serialize(string filename)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(ScenarioFacade));
+            XmlSerializer xs = new XmlSerializer(typeof(Scenario));
             using (StreamWriter wr = new StreamWriter(filename))
-                xs.Serialize(wr, ScenarioFacade.Instance);
+                xs.Serialize(wr, Scenario.Instance);
         }
     }
 }

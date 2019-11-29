@@ -7,13 +7,13 @@ namespace TPBuilder
 {
     public partial class BuilderGUI : Form
     {
-        private ScenarioFacade scenarioFacade;
+        private Scenario scenarioFacade;
         private PositionGUI positionGUI;
 
         public BuilderGUI()
         {
             InitializeComponent();
-            scenarioFacade = ScenarioFacade.Instance;
+            scenarioFacade = Scenario.Instance;
 
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");

@@ -4,10 +4,10 @@ using System.Xml.Serialization;
 namespace TPBuilder
 {
     [XmlRoot("ScenarioFacade")]
-    public sealed class ScenarioFacade
+    public sealed class Scenario
     {
         [XmlIgnore]
-        private static ScenarioFacade instance = null;
+        private static Scenario instance = null;
 
         [XmlIgnore]
         private AircraftFactory aircraftFactory;
@@ -15,19 +15,19 @@ namespace TPBuilder
         public List<Aircraft> Aircrafts { get; set; }
         public List<Airport> Airports { get; set; }
 
-        private ScenarioFacade()
+        private Scenario()
         {
             Airports = new List<Airport>();
             Aircrafts = new List<Aircraft>();
         }
 
-        public static ScenarioFacade Instance
+        public static Scenario Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new ScenarioFacade();
+                    instance = new Scenario();
                 }
                 return instance;
             }

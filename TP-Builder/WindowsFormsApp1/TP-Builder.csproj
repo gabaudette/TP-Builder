@@ -71,7 +71,7 @@
     <Compile Include="ScenarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RescueHelicopter.cs" />
-    <Compile Include="ScenarioFacade.cs" />
+    <Compile Include="Scenario.cs" />
     <Compile Include="WaterBomber.cs" />
     <EmbeddedResource Include="BuilderGUI.resx">
       <DependentUpon>BuilderGUI.cs</DependentUpon>
