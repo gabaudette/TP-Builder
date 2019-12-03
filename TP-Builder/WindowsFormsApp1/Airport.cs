@@ -4,7 +4,8 @@ namespace TPBuilder
     public class Airport
     {
         public string Name { get; set; }
-        public string Position { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         public int MinPassenger { get; set; }
         public int MaxPassenger { get; set; }
         public int MinMarchandise { get; set; }
@@ -14,10 +15,11 @@ namespace TPBuilder
 
         public Airport() { }
 
-        public Airport(string name, string position, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public Airport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
             Name = name;
-            Position = position;
+            X = x;
+            Y = y;
             MinPassenger = minPassenger;
             MaxPassenger = maxPassenger;
             MinMarchandise = minMarchandise;

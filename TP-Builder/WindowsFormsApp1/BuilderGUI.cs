@@ -3,8 +3,10 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
+//Question a Charles passer par mon controleur pour observer/observable ? 
 namespace TPBuilder
 {
+    
     public partial class BuilderGUI : Form
     {
         private Scenario scenarioFacade;
@@ -14,7 +16,6 @@ namespace TPBuilder
         {
             InitializeComponent();
             scenarioFacade = Scenario.Instance;
-
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");
             lsvAirport.Columns.Add("Min. Passenger");

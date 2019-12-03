@@ -3,12 +3,13 @@ using System.Xml.Serialization;
 
 namespace TPBuilder
 {
+    public delegate void DelCreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise);
     [XmlRoot("Scenario")]
-    public sealed class Scenario
+    public class Scenario
     {
         [XmlIgnore]
         private static Scenario instance = null;
-
+        private DelCreateAirport createAirport;
         [XmlIgnore]
         private AircraftFactory aircraftFactory;
 
@@ -17,6 +18,7 @@ namespace TPBuilder
         private Scenario()
         {
             Airports = new List<Airport>();
+            this.createAirport = new DelCreateAirport(CreateAirport);
         }
 
         public static Scenario Instance
@@ -31,12 +33,12 @@ namespace TPBuilder
             }
         }
 
-        public void CreateAiport(string name, string position, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public void CreateAirport(string name, int x , int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
             if (ValidAirport(name))
             {
-                Airports.Add(new Airport(name, position, minPassenger, maxPassenger, minMarchandise, maxMarchandise));
-                System.Console.WriteLine($"Airport <{name}> added at {position} Aiports List {Airports.Count}");
+                Airports.Add(new Airport(name, x, y , minPassenger, maxPassenger, minMarchandise, maxMarchandise));
+                System.Console.WriteLine($"Airport <{name}> added at {x},{y} Aiports List {Airports.Count}");
             }
             else
                 System.Console.WriteLine($"Error : Airport : {name} already exist!");

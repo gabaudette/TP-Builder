@@ -13,6 +13,7 @@ namespace TPBuilder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BuilderGUI());
+
         }
 
         static public void Serialize(string filename)
