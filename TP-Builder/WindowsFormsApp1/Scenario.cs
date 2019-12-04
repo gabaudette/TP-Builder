@@ -35,13 +35,8 @@ namespace TPBuilder
 
         public void CreateAirport(string name, int x , int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
-            if (ValidAirport(name))
-            {
                 Airports.Add(new Airport(name, x, y , minPassenger, maxPassenger, minMarchandise, maxMarchandise));
                 System.Console.WriteLine($"Airport <{name}> added at {x},{y} Aiports List {Airports.Count}");
-            }
-            else
-                System.Console.WriteLine($"Error : Airport : {name} already exist!");
         }
     
         public void DeleteAirport(int index)
