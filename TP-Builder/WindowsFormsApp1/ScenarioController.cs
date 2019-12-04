@@ -55,7 +55,7 @@ namespace TPBuilder
             scenario.AddRescueHelicopter(airportID, name, speed, maintenance);
         }
 
-        static public void Serialize(string filename)
+        public static void Serialize(string filename)
         {
             XmlSerializer xs = new XmlSerializer(typeof(Scenario));
             using (StreamWriter wr = new StreamWriter(filename))
