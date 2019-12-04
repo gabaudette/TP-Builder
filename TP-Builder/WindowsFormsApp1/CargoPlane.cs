@@ -1,4 +1,4 @@
-﻿namespace TPBuilder
+﻿ namespace TPBuilder
 {
     public class CargoPlane : PassengerAircraft
     {
