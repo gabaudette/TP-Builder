@@ -26,17 +26,15 @@ namespace TPBuilder
             get
             {
                 if (instance == null)
-                {
                     instance = new Scenario();
-                }
                 return instance;
             }
         }
 
         public void CreateAirport(string name, int x , int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
-                Airports.Add(new Airport(name, x, y , minPassenger, maxPassenger, minMarchandise, maxMarchandise));
-                System.Console.WriteLine($"Airport <{name}> added at {x},{y} Aiports List {Airports.Count}");
+            Airports.Add(new Airport(name, x, y , minPassenger, maxPassenger, minMarchandise, maxMarchandise));
+            System.Console.WriteLine($"Airport <{name}> added at {x},{y} Aiports List {Airports.Count}");
         }
     
         public void DeleteAirport(int index)
