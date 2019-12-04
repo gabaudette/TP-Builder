@@ -59,6 +59,7 @@
       <DependentUpon>BuilderGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="CargoPlane.cs" />
+    <Compile Include="GeoPosition.cs" />
     <Compile Include="ObserverPlane.cs" />
     <Compile Include="PassengerAircraft.cs" />
     <Compile Include="PassengerPlane.cs" />

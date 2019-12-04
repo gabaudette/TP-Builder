@@ -7,14 +7,14 @@ namespace TPBuilder
     [XmlRoot("Scenario")]
     public class Scenario
     {
-        [XmlIgnore]
-        private static Scenario instance = null;
-        private DelCreateAirport createAirport;
-        [XmlIgnore]
-        private AircraftFactory aircraftFactory;
-
         public List<Airport> Airports { get; set; }
 
+        private static Scenario instance = null;
+        private DelCreateAirport createAirport;
+       
+        private AircraftFactory aircraftFactory;
+
+        
         private Scenario()
         {
             Airports = new List<Airport>();
