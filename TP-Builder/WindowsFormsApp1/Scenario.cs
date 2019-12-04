@@ -94,6 +94,5 @@ namespace TPBuilder
             Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed , maintenance);
             Airports[airportID].AddAircraft(aircraft);
         }
-
     }
 }
