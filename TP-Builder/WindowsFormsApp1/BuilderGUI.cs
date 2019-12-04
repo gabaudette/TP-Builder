@@ -3,7 +3,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-//Question a Charles passer par mon controleur pour observer/observable ? 
 namespace TPBuilder
 {
     
@@ -11,6 +10,7 @@ namespace TPBuilder
     {
         private Scenario scenarioFacade;
         private PositionGUI positionGUI;
+       
 
         public BuilderGUI()
         {
@@ -49,7 +49,7 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
-                scenarioFacade.CreateAiport(tbAirportName.Text, tbPositions.Text, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                ScenarioController.CreateAirport(tbAirportName.Text, 1, 1, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
                 lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text, tbMinPassenger.Text, tbMaxPassenger.Text, tbMinMarchandise.Text, tbMaxMarchandise.Text }));
                 Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
                 ResetAirportControls();
@@ -64,19 +64,19 @@ namespace TPBuilder
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        scenarioFacade.AddCargoPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
+                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
                         break;
                     case 1:
-                        scenarioFacade.AddPassengerPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
                         break;
                     case 2:
-                        scenarioFacade.AddObserverPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
+                        ScenarioController.AddObserverPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 3:
-                        scenarioFacade.AddRescueHelicopter(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
+                        ScenarioController.AddRescueHelicopter(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 4:
-                        scenarioFacade.AddWaterBomber(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
+                        ScenarioController.AddWaterBomber(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
                         break;
                 }
                 lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));
