@@ -151,51 +151,59 @@ namespace TPBuilder
 
         private void CheckAircraftInputType()
         {
-            //@Aircraft Type: Cargo Plane
-            if (cmbAircraftType.SelectedIndex == 0)
+            switch (cmbAircraftType.SelectedIndex)
             {
-                tbWeight.Enabled = true;
-                tbCapacity.Enabled = false;
-                tbDropTime.Enabled = false;
-                tbWaterCapacity.Enabled = false;
-                tbLoad.Enabled = true;
-                tbUnload.Enabled = true;
+                //@Aircraft type : Cargo Plane
+                case 0:
+                    tbCapacity.Enabled = false;
+                    tbDropTime.Enabled = false;
+                    tbLoad.Enabled = true;
+                    tbUnload.Enabled = true;
+                    tbWaterCapacity.Enabled = false;
+                    tbWeight.Enabled = true;
+                    break;
+                //@Aircraft type : Passenger Plane
+                case 1:
+                    tbCapacity.Enabled = true;
+                    tbDropTime.Enabled = false;
+                    tbLoad.Enabled = true;
+                    tbUnload.Enabled = true;
+                    tbWaterCapacity.Enabled = false;
+                    tbWeight.Enabled = false;
+                    break;
+                //@Aircraft type : Observer Plane
+                case 2:
+                    tbCapacity.Enabled = false;
+                    tbDropTime.Enabled = false;
+                    tbLoad.Enabled = false;
+                    tbUnload.Enabled = false;
+                    tbWaterCapacity.Enabled = false;
+                    tbWeight.Enabled = false;
+                    break;
+                //@Aircraft type : Rescue Helicopter
+                case 3:
+                    tbCapacity.Enabled = false;
+                    tbDropTime.Enabled = false;
+                    tbLoad.Enabled = false;
+                    tbUnload.Enabled = false;
+                    tbWaterCapacity.Enabled = false;
+                    tbWeight.Enabled = false;
+                    break;
+                //@Aircraft type : Water Bomber
+                case 4:
+                    tbCapacity.Enabled = false;
+                    tbDropTime.Enabled = true;
+                    tbLoad.Enabled = false;
+                    tbUnload.Enabled = false;
+                    tbWaterCapacity.Enabled = true;
+                    tbWeight.Enabled = false;
+                    break;
             }
-
-            //@Aircraft Type: Passenger Plane
-            else if(cmbAircraftType.SelectedIndex == 1)
-            {
-                tbCapacity.Enabled = true;
-                tbWeight.Enabled = false;
-                tbLoad.Enabled = true;
-                tbUnload.Enabled = true;
-            }
-
-            //@Aircraft Type: WaterBomber
-            else if(cmbAircraftType.SelectedIndex == 4)
-            {
-                tbDropTime.Enabled = true;
-                tbWaterCapacity.Enabled = true;
-            }
-
-            else
-            {
-                tbLoad.Clear();
-                tbUnload.Clear();
-                tbWaterCapacity.Clear();
-                tbDropTime.Clear();
-                tbLoad.Enabled = false;
-                tbUnload.Enabled = false;
-                tbCapacity.Enabled = false;
-                tbWeight.Enabled = false;
-                tbDropTime.Enabled = false;
-                tbWaterCapacity.Enabled = false;
-            }
+            ResetAircraftControls();
         }
 
         private void ResetAircraftControls()
         {
-            cmbAircraftType.SelectedIndex = 0;
             tbAircraftName.Clear();
             tbMaintenance.Clear();
             tbSpeed.Clear();
