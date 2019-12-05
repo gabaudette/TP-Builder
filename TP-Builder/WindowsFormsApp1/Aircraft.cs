@@ -7,6 +7,7 @@ namespace TPBuilder
     [XmlInclude(typeof(PassengerPlane))]
     [XmlInclude(typeof(WaterBomber))]
     [XmlInclude(typeof(RescueHelicopter))]
+
     public abstract class Aircraft
     {
         public string Name { get; set; }
