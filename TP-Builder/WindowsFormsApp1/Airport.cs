@@ -44,5 +44,10 @@ namespace TPBuilder
                 System.Console.WriteLine("Error: " + index + "is out of range", outOfRange.Message);
             }
         }
+
+        public override string ToString()
+        {
+            return $"{Name},{X},{Y},{MinPassenger},{MaxPassenger},{MinMarchandise},{MaxPassenger}";
+        }
     }
 }

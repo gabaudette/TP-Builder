@@ -3,22 +3,26 @@ using System.Xml.Serialization;
 
 namespace TPBuilder
 {
-    public delegate void DelCreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise);
+
     [XmlRoot("Scenario")]
     public class Scenario
     {
         public List<Airport> Airports { get; set; }
 
         private static Scenario instance = null;
-        private DelCreateAirport createAirport;
-       
+
         private AircraftFactory aircraftFactory;
 
-        
+        public AirportNotifier airportNotifier { get; set; }
+
         private Scenario()
         {
             Airports = new List<Airport>();
-            this.createAirport = new DelCreateAirport(CreateAirport);
+        }
+
+        public void SetView(BuilderGUI view)
+        {
+            airportNotifier = new AirportNotifier(view.onAirportCreated);
         }
 
         public static Scenario Instance
@@ -26,17 +30,20 @@ namespace TPBuilder
             get
             {
                 if (instance == null)
+                {
                     instance = new Scenario();
+                }
                 return instance;
             }
         }
 
-        public void CreateAirport(string name, int x , int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
         {
-            Airports.Add(new Airport(name, x, y , minPassenger, maxPassenger, minMarchandise, maxMarchandise));
-            System.Console.WriteLine($"Airport <{name}> added at {x},{y} Aiports List {Airports.Count}");
+            Airport airport = new Airport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise);
+            Airports.Add(airport);
+            airportNotifier(airport.ToString());
         }
-    
+
         public void DeleteAirport(int index)
         {
             try
@@ -45,7 +52,7 @@ namespace TPBuilder
             }
             catch (System.ArgumentOutOfRangeException outOfRange)
             {
-                System.Console.WriteLine($"Error: {index} is out of range {outOfRange.Message}");      
+                System.Console.WriteLine($"Error: {index} is out of range {outOfRange.Message}");
             }
         }
 
@@ -81,7 +88,7 @@ namespace TPBuilder
             Airports[airportID].AddAircraft(aircraft);
         }
 
-        public void AddObserverPlane(int airportID, string name , int speed, int maintenance)
+        public void AddObserverPlane(int airportID, string name, int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateObserverPlane(name, speed, maintenance);
@@ -91,7 +98,7 @@ namespace TPBuilder
         public void AddRescueHelicopter(int airportID, string name, int speed, int maintenance)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
-            Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed , maintenance);
+            Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed, maintenance);
             Airports[airportID].AddAircraft(aircraft);
         }
     }

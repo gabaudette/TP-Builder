@@ -7,13 +7,17 @@ namespace TPBuilder
 {
     static class ScenarioController
     {
-        
+        static BuilderGUI GUI;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BuilderGUI());
+            GUI = new BuilderGUI();
+            Scenario scenario = Scenario.Instance;
+            scenario.SetView(GUI);
+            Application.Run(GUI);
+
         }
 
         public static void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)

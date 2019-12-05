@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
+    public delegate void AirportNotifier(string airport);
     public partial class BuilderGUI : Form
     {
         private Scenario scenario; // Scenario
@@ -57,8 +58,9 @@ namespace TPBuilder
             if (ValidateAirportInput())
             {
                 ScenarioController.CreateAirport(tbAirportName.Text, 1, 1, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
-                lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text, tbMinPassenger.Text, tbMaxPassenger.Text, tbMinMarchandise.Text, tbMaxMarchandise.Text }));
-                Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
+                //lsvAirport.Items.Add(new ListViewItem(new string[] { tbAirportName.Text, tbPositions.Text, tbMinPassenger.Text, tbMaxPassenger.Text, tbMinMarchandise.Text, tbMaxMarchandise.Text }));
+           
+                //Console.WriteLine($"Airport: {tbAirportName.Text} at Position: ({tbPositions.Text}) added");
                 ResetAirportControls();
             }
         }
@@ -292,6 +294,10 @@ namespace TPBuilder
                 fileStream.Close();
                 btnGenerate.Enabled = true;
             }
+        }
+        public void onAirportCreated(string airport)
+        {
+           
         }
     }
 }
