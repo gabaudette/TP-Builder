@@ -419,7 +419,7 @@
             // 
             // tbCapacity
             // 
-            this.tbCapacity.Location = new System.Drawing.Point(972, 716);
+            this.tbCapacity.Location = new System.Drawing.Point(1267, 719);
             this.tbCapacity.Margin = new System.Windows.Forms.Padding(2);
             this.tbCapacity.Name = "tbCapacity";
             this.tbCapacity.Size = new System.Drawing.Size(150, 26);
@@ -476,7 +476,7 @@
             // 
             // tbDropTime
             // 
-            this.tbDropTime.Location = new System.Drawing.Point(1267, 713);
+            this.tbDropTime.Location = new System.Drawing.Point(972, 719);
             this.tbDropTime.Margin = new System.Windows.Forms.Padding(2);
             this.tbDropTime.Name = "tbDropTime";
             this.tbDropTime.Size = new System.Drawing.Size(150, 26);
