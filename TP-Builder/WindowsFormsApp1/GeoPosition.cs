@@ -20,7 +20,6 @@ namespace TPBuilder
 
             Console.WriteLine($"'minX: {minX}, minY:{minY} X: {x}, Y: {y}");
             return null;
-
         }
     }
 }
