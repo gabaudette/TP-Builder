@@ -5,17 +5,17 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
-    
     public partial class BuilderGUI : Form
     {
-        private Scenario scenarioFacade;
-        private PositionGUI positionGUI;
-       
+        private Scenario scenario; // Scenario
+        private PositionGUI positionGUI; // Positions pop-up form
 
         public BuilderGUI()
         {
             InitializeComponent();
-            scenarioFacade = Scenario.Instance;
+            scenario = Scenario.Instance;
+
+            //Airport's listview column setter
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");
             lsvAirport.Columns.Add("Min. Passenger");
@@ -24,9 +24,11 @@ namespace TPBuilder
             lsvAirport.Columns.Add("Max. Marchandise");
             lsvAirport.View = View.Details;
 
+            //Resize the airport's listview columns
             for (int i = 0; i < lsvAirport.Columns.Count; i++)
                 lsvAirport.Columns[i].Width = 100;
 
+            //Aircraft's listview column setter
             lsvAircraft.Columns.Add("Aircraft Name");
             lsvAircraft.Columns.Add("Aircraft Type");
             lsvAircraft.View = View.Details;
@@ -45,6 +47,11 @@ namespace TPBuilder
             CheckAircraftInputType();
         }
 
+        /// <summary>
+        /// Add airport button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddAirport_Click(object sender, EventArgs e)
         {
             if (ValidateAirportInput())
@@ -55,7 +62,11 @@ namespace TPBuilder
                 ResetAirportControls();
             }
         }
-
+        /// <summary>
+        /// Add aircraft button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
             Console.WriteLine($"TEST : {lsvAirport­.SelectedItems}");
@@ -64,19 +75,19 @@ namespace TPBuilder
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
+                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
                         break;
                     case 1:
-                        ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
                         break;
                     case 2:
-                        ScenarioController.AddObserverPlane(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
+                        ScenarioController.AddObserverPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 3:
-                        ScenarioController.AddRescueHelicopter(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
+                        ScenarioController.AddRescueHelicopter(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
                         break;
                     case 4:
-                        ScenarioController.AddWaterBomber(lsvAirport.FocusedItem.Index,tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
+                        ScenarioController.AddWaterBomber(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
                         break;
                 }
                 lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));
@@ -84,10 +95,13 @@ namespace TPBuilder
                 ResetAircraftControls();
             }
         }
-
+        /// <summary>
+        /// Front-end validation of all airport's inputs
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateAirportInput()
         {
-         
+
             if (tbAirportName.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport name input value cannot be empty");
@@ -99,7 +113,7 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
-            
+
             if (tbPositions.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
@@ -107,7 +121,10 @@ namespace TPBuilder
             }
             return true;
         }
-
+        /// <summary>
+        /// Front-end validation of all aircraft's inputs
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateAircraftInput()
         {
             if (tbAircraftName.Text == "")
@@ -122,7 +139,7 @@ namespace TPBuilder
                 return false;
             }
 
-            if(tbSpeed.Text == "")
+            if (tbSpeed.Text == "")
             {
                 Console.WriteLine("Validation Error: Aircraft speed input value cannot be empty");
                 return false;
@@ -134,13 +151,13 @@ namespace TPBuilder
                 return false;
             }
 
-            if(tbMaintenance.Text == "")
+            if (tbMaintenance.Text == "")
             {
                 Console.WriteLine("Validation Error: Aircraft maintenance time input value cannot be empty");
                 return false;
             }
 
-            if(!(Regex.IsMatch(tbMaintenance.Text, @"\d")))
+            if (!(Regex.IsMatch(tbMaintenance.Text, @"\d")))
             {
                 Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
                 return false;
@@ -148,7 +165,9 @@ namespace TPBuilder
 
             return true;
         }
-
+        /// <summary>
+        /// Check the aircraft combobox selected item type
+        /// </summary>
         private void CheckAircraftInputType()
         {
             switch (cmbAircraftType.SelectedIndex)
@@ -201,7 +220,9 @@ namespace TPBuilder
             }
             ResetAircraftControls();
         }
-
+        /// <summary>
+        /// Reset all the aircraft's inputs
+        /// </summary>
         private void ResetAircraftControls()
         {
             tbAircraftName.Clear();
@@ -214,30 +235,48 @@ namespace TPBuilder
             tbWeight.Clear();
             tbDropTime.Clear();
         }
-
+        /// <summary>
+        /// Reset all the airport's inputs
+        /// </summary>
         private void ResetAirportControls()
         {
             tbAirportName.Clear();
             tbPositions.Clear();
         }
-
+        /// <summary>
+        /// Button that open the map menu to select a position for the airport
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnMap_Click(object sender, EventArgs e)
         {
             positionGUI = new PositionGUI();
             positionGUI.Show();
         }
-
+        /// <summary>
+        /// Event that check if the combobox aircraft selection changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CmbAircraftType_SelectionChangeCommitted(object sender, EventArgs e)
         {
             CheckAircraftInputType();
         }
-
+        /// <summary>
+        /// Generate scenario button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
             if (tbFilename.Text != "")
                 ScenarioController.Serialize(tbFilename.Text);
         }
-
+        /// <summary>
+        /// Save scenario file button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSaveFile_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -245,7 +284,7 @@ namespace TPBuilder
             saveFileDialog.Title = "Save a XML File";
             saveFileDialog.ShowDialog();
 
-            if(saveFileDialog.FileName != "")
+            if (saveFileDialog.FileName != "")
             {
                 FileStream fileStream = (FileStream)saveFileDialog.OpenFile();
                 FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
