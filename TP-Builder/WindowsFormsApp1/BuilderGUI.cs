@@ -111,6 +111,26 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
+            if (!Regex.IsMatch(tbMinPassenger.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport minPassenger value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMaxPassenger.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport maxPassenger value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMinMarchandise.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport minMarchandise value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMaxMarchandise.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport maxMarchandise value must be numerial");
+                return false;
+            }
             return true;
         }
         /// <summary>
