@@ -57,7 +57,6 @@
             this.Positions = new System.Windows.Forms.Label();
             this.lsvAirport = new System.Windows.Forms.ListView();
             this.lsvAircraft = new System.Windows.Forms.ListView();
-            this.tbPositions = new System.Windows.Forms.TextBox();
             this.btnMap = new System.Windows.Forms.Button();
             this.cmbAircraftType = new System.Windows.Forms.ComboBox();
             this.tbCapacity = new System.Windows.Forms.TextBox();
@@ -74,6 +73,7 @@
             this.AirportControlGroup = new System.Windows.Forms.Panel();
             this.AircraftControlGroup = new System.Windows.Forms.Panel();
             this.unlockBtn = new System.Windows.Forms.Button();
+            this.tbPosition = new System.Windows.Forms.TextBox();
             this.AirportControlGroup.SuspendLayout();
             this.AircraftControlGroup.SuspendLayout();
             this.SuspendLayout();
@@ -394,20 +394,12 @@
             this.lsvAircraft.TabIndex = 42;
             this.lsvAircraft.UseCompatibleStateImageBehavior = false;
             // 
-            // tbPositions
-            // 
-            this.tbPositions.Location = new System.Drawing.Point(93, 59);
-            this.tbPositions.Margin = new System.Windows.Forms.Padding(2);
-            this.tbPositions.Name = "tbPositions";
-            this.tbPositions.Size = new System.Drawing.Size(150, 26);
-            this.tbPositions.TabIndex = 43;
-            // 
             // btnMap
             // 
             this.btnMap.Location = new System.Drawing.Point(247, 52);
             this.btnMap.Margin = new System.Windows.Forms.Padding(2);
             this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(78, 41);
+            this.btnMap.Size = new System.Drawing.Size(89, 41);
             this.btnMap.TabIndex = 44;
             this.btnMap.Text = "Map";
             this.btnMap.UseVisualStyleBackColor = true;
@@ -526,8 +518,8 @@
             // 
             // AirportControlGroup
             // 
+            this.AirportControlGroup.Controls.Add(this.tbPosition);
             this.AirportControlGroup.Controls.Add(this.btnMap);
-            this.AirportControlGroup.Controls.Add(this.tbPositions);
             this.AirportControlGroup.Controls.Add(this.tbMaxMarchandise);
             this.AirportControlGroup.Controls.Add(this.tbMinMarchandise);
             this.AirportControlGroup.Controls.Add(this.tbMaxPassenger);
@@ -578,6 +570,14 @@
             this.unlockBtn.Text = "Unlock";
             this.unlockBtn.UseVisualStyleBackColor = true;
             this.unlockBtn.Click += new System.EventHandler(this.UnlockBtn_Click);
+            // 
+            // tbPosition
+            // 
+            this.tbPosition.Location = new System.Drawing.Point(93, 59);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.ReadOnly = true;
+            this.tbPosition.Size = new System.Drawing.Size(150, 26);
+            this.tbPosition.TabIndex = 45;
             // 
             // BuilderGUI
             // 
@@ -646,7 +646,6 @@
         private System.Windows.Forms.Label Positions;
         private System.Windows.Forms.ListView lsvAirport;
         private System.Windows.Forms.ListView lsvAircraft;
-        private System.Windows.Forms.TextBox tbPositions;
         private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.ComboBox cmbAircraftType;
         private System.Windows.Forms.TextBox tbCapacity;
@@ -663,6 +662,7 @@
         private System.Windows.Forms.Panel AirportControlGroup;
         private System.Windows.Forms.Panel AircraftControlGroup;
         private System.Windows.Forms.Button unlockBtn;
+        private System.Windows.Forms.TextBox tbPosition;
     }
 }
 
