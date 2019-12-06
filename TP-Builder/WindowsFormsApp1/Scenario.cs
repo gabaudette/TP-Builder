@@ -25,8 +25,8 @@ namespace TPBuilder
 
         public void SetView(BuilderGUI view)
         {
-            airportNotifier = new AirportNotifier(view.onAirportCreated);
-            aircraftNotifier = new AircraftNotifier(view.onAircraftCreated);
+            airportNotifier = new AirportNotifier(view.OnAirportCreated);
+            aircraftNotifier = new AircraftNotifier(view.OnAircraftCreated);
         }
 
         public static Scenario Instance
@@ -78,9 +78,7 @@ namespace TPBuilder
             Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
             aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
-          
         }
-
         public void AddPassengerPlane(int airportID, string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
