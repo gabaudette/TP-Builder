@@ -238,6 +238,10 @@ namespace TPBuilder
         private void ResetAirportControls()
         {
             tbAirportName.Clear();
+            tbMinMarchandise.Clear();
+            tbMaxMarchandise.Clear();
+            tbMinPassenger.Clear();
+            tbMaxPassenger.Clear();
             tbPositions.Clear();
         }
         /// <summary>
