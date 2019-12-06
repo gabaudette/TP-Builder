@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
+    //TODO : Faire un delegate qui check quand le form se ferme y faut avoir le x pis le y 
+    // pour l'autre form
+    //public delegate void onPositionSet(int x, int y);
     public partial class PositionGUI : Form
     {
         public MouseEventArgs Me { get; private set; }
