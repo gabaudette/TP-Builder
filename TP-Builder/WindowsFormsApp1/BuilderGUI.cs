@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
-    
     public delegate void AirportNotifier(string airport);
     public delegate void AircraftNotifier(string aircraft);
     public partial class BuilderGUI : Form
@@ -41,7 +40,6 @@ namespace TPBuilder
             tbFilename.Enabled = false;
             btnGenerate.Enabled = false;
         }
-
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
             string[] aircraftTypes = new string[] { "Cargo Plane", "Passenger Plane", "Observer Plane", "Rescue Helicopter", "Water Bomber" };
@@ -49,7 +47,6 @@ namespace TPBuilder
             cmbAircraftType.SelectedIndex = 0;
             CheckAircraftInputType();
         }
-
         /// <summary>
         /// Add airport button click event
         /// </summary>
@@ -100,7 +97,6 @@ namespace TPBuilder
         /// <returns></returns>
         private bool ValidateAirportInput()
         {
-
             if (tbAirportName.Text == "")
             {
                 Console.WriteLine("Validation Error: Airport name input value cannot be empty");
@@ -301,6 +297,10 @@ namespace TPBuilder
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
         }
+        /// <summary>
+        /// Event that fired when a aircraft is created
+        /// </summary>
+        /// <param name="aircraft"></param>
         public void onAircraftCreated(string aircraft)
         {
             string[] aircraftArr = aircraft.Split(',');
