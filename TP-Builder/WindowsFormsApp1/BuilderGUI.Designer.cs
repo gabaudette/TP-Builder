@@ -73,6 +73,7 @@
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.AirportControlGroup = new System.Windows.Forms.Panel();
             this.AircraftControlGroup = new System.Windows.Forms.Panel();
+            this.unlockBtn = new System.Windows.Forms.Button();
             this.AirportControlGroup.SuspendLayout();
             this.AircraftControlGroup.SuspendLayout();
             this.SuspendLayout();
@@ -568,11 +569,22 @@
             this.AircraftControlGroup.Size = new System.Drawing.Size(1427, 102);
             this.AircraftControlGroup.TabIndex = 58;
             // 
+            // unlockBtn
+            // 
+            this.unlockBtn.Location = new System.Drawing.Point(814, 131);
+            this.unlockBtn.Name = "unlockBtn";
+            this.unlockBtn.Size = new System.Drawing.Size(91, 43);
+            this.unlockBtn.TabIndex = 59;
+            this.unlockBtn.Text = "Unlock";
+            this.unlockBtn.UseVisualStyleBackColor = true;
+            this.unlockBtn.Click += new System.EventHandler(this.UnlockBtn_Click);
+            // 
             // BuilderGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.unlockBtn);
             this.Controls.Add(this.lblAircraftName);
             this.Controls.Add(this.Positions);
             this.Controls.Add(this.AircraftControlGroup);
@@ -650,6 +662,7 @@
         private System.Windows.Forms.Button btnSaveFile;
         private System.Windows.Forms.Panel AirportControlGroup;
         private System.Windows.Forms.Panel AircraftControlGroup;
+        private System.Windows.Forms.Button unlockBtn;
     }
 }
 
