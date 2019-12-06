@@ -40,6 +40,8 @@ namespace TPBuilder
             tbFilename.Enabled = false;
             btnGenerate.Enabled = false;
             DeactivateAircraftControl();
+            unlockBtn.Visible = false;
+            unlockBtn.Enabled = false;
         }
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
@@ -315,6 +317,8 @@ namespace TPBuilder
         {
             DeactivateAirportControl();
             ActivateAircraftControl();
+            unlockBtn.Visible = true;
+            unlockBtn.Enabled = true;
         }
         /// <summary>
         /// 
@@ -351,6 +355,14 @@ namespace TPBuilder
             lsvAircraft.Enabled = true;
             btnAddAircraft.Enabled = true;
             AircraftControlGroup.Enabled = true;
+        }
+
+        private void UnlockBtn_Click(object sender, EventArgs e)
+        {
+            ActivateAirportControl();
+            unlockBtn.Visible = false;
+            unlockBtn.Enabled = false;
+            DeactivateAircraftControl();
         }
     }
 }
