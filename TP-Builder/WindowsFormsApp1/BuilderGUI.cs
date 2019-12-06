@@ -111,11 +111,6 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
-            if (tbPosition.Text == "")
-            {
-                Console.WriteLine("Validation Error: Position input value cannot be empty");
-                return false;
-            }
             return true;
         }
         /// <summary>
@@ -372,5 +367,6 @@ namespace TPBuilder
             unlockBtn.Enabled = false;
             DeactivateAircraftControl();
         }
+
     }
 }
