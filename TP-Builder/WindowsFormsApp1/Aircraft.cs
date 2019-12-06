@@ -10,9 +10,9 @@ namespace TPBuilder
 
     public abstract class Aircraft
     {
-        public string Name { get; set; }
-        public int Speed { get; set; }
-        public int Maintenance { get; set; }
+        public string Name { get; set; } //Name of an Aircraft
+        public int Speed { get; set; } // Speed of an Aircraft
+        public int Maintenance { get; set; } //Maintence time of an Aircraft
 
         public Aircraft() { }
         public Aircraft(string name, int speed, int maintenance)
@@ -22,6 +22,10 @@ namespace TPBuilder
             Maintenance = maintenance;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{Name},{Speed},{Maintenance}";
