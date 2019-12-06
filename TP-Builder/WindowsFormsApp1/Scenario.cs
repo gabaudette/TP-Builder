@@ -13,7 +13,10 @@ namespace TPBuilder
 
         private AircraftFactory aircraftFactory;
 
+        [XmlIgnore]
         public AirportNotifier airportNotifier { get; set; }
+        [XmlIgnore]
+        public AircraftNotifier aircraftNotifier { get; set; }
 
         private Scenario()
         {
@@ -23,6 +26,7 @@ namespace TPBuilder
         public void SetView(BuilderGUI view)
         {
             airportNotifier = new AirportNotifier(view.onAirportCreated);
+            aircraftNotifier = new AircraftNotifier(view.onAircraftCreated);
         }
 
         public static Scenario Instance
@@ -42,6 +46,7 @@ namespace TPBuilder
             Airport airport = new Airport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise);
             Airports.Add(airport);
             airportNotifier(airport.ToString());
+            
         }
 
         public void DeleteAirport(int index)
@@ -71,13 +76,16 @@ namespace TPBuilder
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateCargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
+            aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
+          
         }
 
         public void AddPassengerPlane(int airportID, string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreatePassengerPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
+            aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
         }
 
@@ -85,6 +93,7 @@ namespace TPBuilder
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateWaterBomber(name, speed, maintenance, droppingTime, waterCapacity);
+            aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
         }
 
@@ -92,6 +101,7 @@ namespace TPBuilder
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateObserverPlane(name, speed, maintenance);
+            aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
         }
 
@@ -99,6 +109,7 @@ namespace TPBuilder
         {
             aircraftFactory = AircraftFactory.GetAircraftFactory();
             Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed, maintenance);
+            aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
         }
     }
