@@ -13,7 +13,6 @@ namespace TPBuilder
         {
             InitializeComponent();
             pbMap.Image = Properties.Resources.map1;
-
         }
         private void PositionGUI_Load(object sender, EventArgs e) { }
 
