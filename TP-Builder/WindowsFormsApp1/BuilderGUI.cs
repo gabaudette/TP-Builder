@@ -5,7 +5,9 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
+    
     public delegate void AirportNotifier(string airport);
+    public delegate void AircraftNotifier(string aircraft);
     public partial class BuilderGUI : Form
     {
         private Scenario scenario; // Scenario
@@ -89,8 +91,6 @@ namespace TPBuilder
                         ScenarioController.AddWaterBomber(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
                         break;
                 }
-                lsvAircraft.Items.Add(new ListViewItem(new string[] { tbAircraftName.Text, cmbAircraftType.SelectedItem.ToString() }));
-                Console.WriteLine($"Aircraft: {tbAircraftName.Text} Type: ({cmbAircraftType.SelectedItem.ToString()}) added to Airport ID : {lsvAirport.FocusedItem.Index}");
                 ResetAircraftControls();
             }
         }
@@ -292,10 +292,19 @@ namespace TPBuilder
                 btnGenerate.Enabled = true;
             }
         }
+        /// <summary>
+        /// Event that fired when a airport is created
+        /// </summary>
+        /// <param name="airport"></param>
         public void onAirportCreated(string airport)
         {
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
+        }
+        public void onAircraftCreated(string aircraft)
+        {
+            string[] aircraftArr = aircraft.Split(',');
+            lsvAircraft.Items.Add(new ListViewItem(aircraftArr));
         }
     }
 }
