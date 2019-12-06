@@ -17,7 +17,6 @@ namespace TPBuilder
             Scenario scenario = Scenario.Instance;
             scenario.SetView(GUI);
             Application.Run(GUI);
-
         }
 
         public static void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
