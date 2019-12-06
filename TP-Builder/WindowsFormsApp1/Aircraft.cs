@@ -21,5 +21,10 @@ namespace TPBuilder
             Speed = speed;
             Maintenance = maintenance;
         }
+
+        public override string ToString()
+        {
+            return $"{Name},{Speed},{Maintenance}";
+        }
     }
 }
