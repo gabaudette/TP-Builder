@@ -309,7 +309,8 @@ namespace TPBuilder
             lsvAircraft.Items.Add(new ListViewItem(aircraftArr));
         }
         /// <summary>
-        /// 
+        /// When a double click is fired on the listview airport item, it unlocked the 
+        /// aircraft listview and inputs
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -321,7 +322,7 @@ namespace TPBuilder
             unlockBtn.Enabled = true;
         }
         /// <summary>
-        /// 
+        /// Deactivate all airport inputs
         /// </summary>
         private void DeactivateAirportControl()
         {
@@ -330,7 +331,7 @@ namespace TPBuilder
             AirportControlGroup.Enabled = false;
         }
         /// <summary>
-        /// 
+        /// Activate all aircraft inputs
         /// </summary>
         private void ActivateAirportControl()
         {
@@ -339,7 +340,7 @@ namespace TPBuilder
             AirportControlGroup.Enabled = true;
         }
         /// <summary>
-        /// 
+        /// Deactivate all aircraft inputs
         /// </summary>
         private void DeactivateAircraftControl()
         {
@@ -348,7 +349,7 @@ namespace TPBuilder
             AircraftControlGroup.Enabled = false;
         }
         /// <summary>
-        /// 
+        /// Deactivate all aircraft inputs
         /// </summary>
         private void ActivateAircraftControl()
         {
@@ -356,7 +357,11 @@ namespace TPBuilder
             btnAddAircraft.Enabled = true;
             AircraftControlGroup.Enabled = true;
         }
-
+        /// <summary>
+        /// Activate all aircraft inputs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnlockBtn_Click(object sender, EventArgs e)
         {
             ActivateAirportControl();
