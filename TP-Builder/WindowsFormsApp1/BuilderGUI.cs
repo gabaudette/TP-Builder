@@ -39,6 +39,7 @@ namespace TPBuilder
 
             tbFilename.Enabled = false;
             btnGenerate.Enabled = false;
+            DeactivateAircraftControl();
         }
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
@@ -67,7 +68,6 @@ namespace TPBuilder
         /// <param name="e"></param>
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
-            Console.WriteLine($"TEST : {lsvAirport­.SelectedItems}");
             if (ValidateAircraftInput())
             {
                 switch (cmbAircraftType.SelectedIndex)
@@ -292,7 +292,7 @@ namespace TPBuilder
         /// Event that fired when a airport is created
         /// </summary>
         /// <param name="airport"></param>
-        public void onAirportCreated(string airport)
+        public void OnAirportCreated(string airport)
         {
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
@@ -301,10 +301,56 @@ namespace TPBuilder
         /// Event that fired when a aircraft is created
         /// </summary>
         /// <param name="aircraft"></param>
-        public void onAircraftCreated(string aircraft)
+        public void OnAircraftCreated(string aircraft)
         {
             string[] aircraftArr = aircraft.Split(',');
             lsvAircraft.Items.Add(new ListViewItem(aircraftArr));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LsvAirport_DoubleClick(object sender, EventArgs e)
+        {
+            DeactivateAirportControl();
+            ActivateAircraftControl();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DeactivateAirportControl()
+        {
+            lsvAirport.Enabled = false;
+            btnAddAirport.Enabled = false;
+            AirportControlGroup.Enabled = false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ActivateAirportControl()
+        {
+            lsvAirport.Enabled = true;
+            btnAddAirport.Enabled = true;
+            AirportControlGroup.Enabled = true;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DeactivateAircraftControl()
+        {
+            lsvAircraft.Enabled = false;
+            btnAddAircraft.Enabled = false;
+            AircraftControlGroup.Enabled = false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ActivateAircraftControl()
+        {
+            lsvAircraft.Enabled = true;
+            btnAddAircraft.Enabled = true;
+            AircraftControlGroup.Enabled = true;
         }
     }
 }
