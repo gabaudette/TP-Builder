@@ -571,9 +571,9 @@
             // 
             // unlockBtn
             // 
-            this.unlockBtn.Location = new System.Drawing.Point(814, 131);
+            this.unlockBtn.Location = new System.Drawing.Point(890, 105);
             this.unlockBtn.Name = "unlockBtn";
-            this.unlockBtn.Size = new System.Drawing.Size(91, 43);
+            this.unlockBtn.Size = new System.Drawing.Size(131, 63);
             this.unlockBtn.TabIndex = 59;
             this.unlockBtn.Text = "Unlock";
             this.unlockBtn.UseVisualStyleBackColor = true;
