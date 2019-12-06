@@ -19,7 +19,8 @@ namespace TPBuilder
 
             //Airport's listview column setter
             lsvAirport.Columns.Add("Airport Name");
-            lsvAirport.Columns.Add("Positions");
+            lsvAirport.Columns.Add("Position X");
+            lsvAirport.Columns.Add("Position Y");
             lsvAirport.Columns.Add("Min. Passenger");
             lsvAirport.Columns.Add("Max. Passenger");
             lsvAirport.Columns.Add("Min. Marchandise");
@@ -55,12 +56,11 @@ namespace TPBuilder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void BtnAddAirport_Click(object sender, EventArgs e)
         {
             if (ValidateAirportInput())
             {
-                ScenarioController.CreateAirport(tbAirportName.Text, 1, 1, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                ScenarioController.CreateAirport(tbAirportName.Text, (int)positionGUI.X, (int)positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
                 ResetAirportControls();
             }
         }
@@ -111,10 +111,9 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
-
-            if (tbPositions.Text == "")
+            if (tbPosition.Text == "")
             {
-                Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
+                Console.WriteLine("Validation Error: Position input value cannot be empty");
                 return false;
             }
             return true;
@@ -243,7 +242,6 @@ namespace TPBuilder
             tbMaxMarchandise.Clear();
             tbMinPassenger.Clear();
             tbMaxPassenger.Clear();
-            tbPositions.Clear();
         }
         /// <summary>
         /// Button that open the map menu to select a position for the airport
