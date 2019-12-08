@@ -11,12 +11,20 @@ namespace TPBuilder
     {
         private Scenario scenario; // Scenario
         private PositionGUI positionGUI; // Positions pop-up form
+        public int PosX { get; set; }
+        public int PosY { get; set; }
+
 
         public BuilderGUI()
         {
             InitializeComponent();
             scenario = Scenario.Instance;
+            setView();
 
+        }
+
+        private void setView()
+        {
             //Airport's listview column setter
             lsvAirport.Columns.Add("Airport Name");
             lsvAirport.Columns.Add("Positions");
@@ -43,6 +51,15 @@ namespace TPBuilder
             unlockBtn.Visible = false;
             unlockBtn.Enabled = false;
         }
+
+        public void setPos(int posX, int posY, int width, int height)
+        {
+            PosX = posX;
+            PosY = posY;
+            //tbPositions.Text = GeoPosition.ConvertToDMS(PosX,PosY, width,height);
+            
+        }
+
         private void BuilderGUI_Load(object sender, EventArgs e)
         {
             string[] aircraftTypes = new string[] { "Cargo Plane", "Passenger Plane", "Observer Plane", "Rescue Helicopter", "Water Bomber" };
@@ -60,7 +77,7 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
-                ScenarioController.CreateAirport(tbAirportName.Text, 1, 1, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                ScenarioController.CreateAirport(tbAirportName.Text, PosX, PosY, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
                 ResetAirportControls();
             }
         }
@@ -252,7 +269,7 @@ namespace TPBuilder
         /// <param name="e"></param>
         private void BtnMap_Click(object sender, EventArgs e)
         {
-            positionGUI = new PositionGUI();
+            positionGUI = new PositionGUI(this);
             positionGUI.Show();
         }
         /// <summary>
