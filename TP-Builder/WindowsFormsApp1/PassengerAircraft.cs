@@ -4,7 +4,7 @@
     {
         public int LoadingTime { get; set; }
         public int UnloadingTime { get; set; }
-        public int Capacity { get; set; }
+        public int MaxCapacity { get; set; }
 
         public PassengerAircraft() { }
 
@@ -12,7 +12,7 @@
         {
             LoadingTime = loadingTime;
             UnloadingTime = unloadingTime;
-            Capacity = capacity;
+            MaxCapacity = capacity;
         }
     }
 }
