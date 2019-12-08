@@ -9,13 +9,12 @@ namespace TPBuilder
     public partial class PositionGUI : Form
     {
         public MouseEventArgs Me { get; private set; }
-        public double X { get; private set; }
-        public double Y { get; private set; }
+        public int X { get; private set; }
+        public int Y { get; private set; }
 
         public PositionGUI()
         {
             InitializeComponent();
-            BuilderGUI = builderGUI;
             pbMap.Image = Properties.Resources.map1;
         }
         private void PositionGUI_Load(object sender, EventArgs e) { }
@@ -28,8 +27,8 @@ namespace TPBuilder
         private void PbMap_Click(object sender, EventArgs e)
         {
             Me = (MouseEventArgs)e;
-            X = (double)(Me.X * 180) / pbMap.Width - 90;
-            Y = (double)(Me.X * 180) / pbMap.Height - 90;
+            X = Me.X;
+            Y = Me.Y;
             GeoPosition.ConvertToDMS(X, Y);
             this.Close();
         }
