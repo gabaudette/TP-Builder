@@ -4,13 +4,16 @@ namespace TPBuilder
 {
     static class GeoPosition
     {
-        public static string ConvertToDMS(int x, int y, int width, int height)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public static string ConvertToDMS(double x, double y)
         {
-            double tempX = (double)(x * 180) / width - 90;
-            double tempY = (double)(x * 180) / height - 90;
-
-            double degX = Math.Floor(tempX);
-            double degY = Math.Floor(tempY);
+            double degX = Math.Floor(x);
+            double degY = Math.Floor(y);
 
             double tempDegX = x - degX;
             double tempDegY = y - degY;

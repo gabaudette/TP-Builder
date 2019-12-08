@@ -27,7 +27,8 @@ namespace TPBuilder
         {
             //Airport's listview column setter
             lsvAirport.Columns.Add("Airport Name");
-            lsvAirport.Columns.Add("Positions");
+            lsvAirport.Columns.Add("Position X");
+            lsvAirport.Columns.Add("Position Y");
             lsvAirport.Columns.Add("Min. Passenger");
             lsvAirport.Columns.Add("Max. Passenger");
             lsvAirport.Columns.Add("Min. Marchandise");
@@ -72,12 +73,11 @@ namespace TPBuilder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void BtnAddAirport_Click(object sender, EventArgs e)
         {
             if (ValidateAirportInput())
             {
-                ScenarioController.CreateAirport(tbAirportName.Text, PosX, PosY, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                ScenarioController.CreateAirport(tbAirportName.Text, (int)positionGUI.X, (int)positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
                 ResetAirportControls();
             }
         }
@@ -128,10 +128,24 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
-
-            if (tbPositions.Text == "")
+            if (!Regex.IsMatch(tbMinPassenger.Text, @"^\d$"))
             {
-                Console.WriteLine("Validation Error: Airport position(s) (X or Y) input(s) cannot be empty");
+                Console.WriteLine("Validation Error: Airport minPassenger value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMaxPassenger.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport maxPassenger value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMinMarchandise.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport minMarchandise value must be numerial");
+                return false;
+            }
+            if (!Regex.IsMatch(tbMaxMarchandise.Text, @"^\d$"))
+            {
+                Console.WriteLine("Validation Error: Airport maxMarchandise value must be numerial");
                 return false;
             }
             return true;
@@ -260,7 +274,6 @@ namespace TPBuilder
             tbMaxMarchandise.Clear();
             tbMinPassenger.Clear();
             tbMaxPassenger.Clear();
-            tbPositions.Clear();
         }
         /// <summary>
         /// Button that open the map menu to select a position for the airport
@@ -391,5 +404,6 @@ namespace TPBuilder
             unlockBtn.Enabled = false;
             DeactivateAircraftControl();
         }
+
     }
 }
