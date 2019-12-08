@@ -26,9 +26,9 @@
         /// <param name="unLoadingTime"></param>
         /// <param name="weight"></param>
         /// <returns></returns>
-        public static Aircraft CreateCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int weight)
+        public static Aircraft CreateCargoPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime, int capacity)
         {
-            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, weight);
+            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
         }
         /// <summary>
         /// Create a passenger plane
