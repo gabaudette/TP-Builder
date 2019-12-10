@@ -34,9 +34,10 @@
             // 
             // pbMap
             // 
-            this.pbMap.Location = new System.Drawing.Point(40, 26);
+            this.pbMap.Location = new System.Drawing.Point(27, 17);
+            this.pbMap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbMap.Name = "pbMap";
-            this.pbMap.Size = new System.Drawing.Size(1200, 923);
+            this.pbMap.Size = new System.Drawing.Size(800, 600);
             this.pbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMap.TabIndex = 0;
             this.pbMap.TabStop = false;
@@ -44,10 +45,11 @@
             // 
             // PositionGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 975);
+            this.ClientSize = new System.Drawing.Size(852, 634);
             this.Controls.Add(this.pbMap);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PositionGUI";
