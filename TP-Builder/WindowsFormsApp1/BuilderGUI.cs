@@ -31,11 +31,12 @@ namespace TPBuilder
             lsvAirport.Columns.Add("Max. Passenger");
             lsvAirport.Columns.Add("Min. Marchandise");
             lsvAirport.Columns.Add("Max. Marchandise");
+            lsvAirport.Columns.Add("DMS");
             lsvAirport.View = View.Details;
 
             //Resize the airport's listview columns
             for (int i = 0; i < lsvAirport.Columns.Count; i++)
-                lsvAirport.Columns[i].Width = 100;
+                lsvAirport.Columns[i].Width = 115;
 
             //Aircraft's listview column setter
             lsvAircraft.Columns.Add("Aircraft Name");
@@ -65,16 +66,17 @@ namespace TPBuilder
         /// <param name="e"></param>
         private void BtnAddAirport_Click(object sender, EventArgs e)
         {
-            if (ValidateAirportInput())
-            {
-                if(positionGUI != null)
-                { 
-                    ScenarioController.CreateAirport(tbAirportName.Text,positionGUI.X,positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
-                    ResetAirportControls();
+            ValidateAirportInput();
+                if (ValidateAirportInput())
+                {
+                    if(positionGUI != null)
+                    { 
+                        ScenarioController.CreateAirport(tbAirportName.Text,positionGUI.X,positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text), positionGUI.DMS);
+                        ResetAirportControls();
+                    }
+                    else
+                        Console.WriteLine("You must set the position of the airport on the map");
                 }
-                else
-                    Console.WriteLine("You must set the position of the airport on the map");
-            }
         }
         /// <summary>
         /// Add aircraft button click event
@@ -83,6 +85,7 @@ namespace TPBuilder
         /// <param name="e"></param>
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
+            ValidateAircraftInput();
             if (ValidateAircraftInput())
             {
                 switch (cmbAircraftType.SelectedIndex)
@@ -124,25 +127,25 @@ namespace TPBuilder
                 return false;
             }
 
-            if (!Regex.IsMatch(tbMinPassenger.Text, @"^\d$"))
+            if (!Regex.IsMatch(tbMinPassenger.Text, @"^\d+$"))
             {
                 Console.WriteLine("Validation Error: Airport minPassenger value must be numerial");
                 return false;
             }
 
-            if (!Regex.IsMatch(tbMaxPassenger.Text, @"^\d$"))
+            if (!Regex.IsMatch(tbMaxPassenger.Text, @"^\d+$"))
             {
                 Console.WriteLine("Validation Error: Airport maxPassenger value must be numerial");
                 return false;
             }
 
-            if (!Regex.IsMatch(tbMinMarchandise.Text, @"^\d$"))
+            if (!Regex.IsMatch(tbMinMarchandise.Text, @"^\d+$"))
             {
                 Console.WriteLine("Validation Error: Airport minMarchandise value must be numerial");
                 return false;
             }
 
-            if (!Regex.IsMatch(tbMaxMarchandise.Text, @"^\d$"))
+            if (!Regex.IsMatch(tbMaxMarchandise.Text, @"^\d+$"))
             {
                 Console.WriteLine("Validation Error: Airport maxMarchandise value must be numerial");
                 return false;
@@ -173,7 +176,7 @@ namespace TPBuilder
                 return false;
             }
 
-            if (!(Regex.IsMatch(tbSpeed.Text, @"\d")))
+            if (!(Regex.IsMatch(tbSpeed.Text, @"^\d+$")))
             {
                 Console.WriteLine("Validation Error: Aircraft speed value must be numerical");
                 return false;
@@ -185,7 +188,13 @@ namespace TPBuilder
                 return false;
             }
 
-            if (!(Regex.IsMatch(tbMaintenance.Text, @"\d")))
+            if (!(Regex.IsMatch(tbMaintenance.Text, @"^\d+$")))
+            {
+                Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
+                return false;
+            }
+
+            if (!(Regex.IsMatch(tbCapacity.Text, @"^\d+$")))
             {
                 Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
                 return false;
