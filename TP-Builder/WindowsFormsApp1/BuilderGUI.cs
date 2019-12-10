@@ -328,8 +328,8 @@ namespace TPBuilder
 
             if (saveFileDialog.FileName != "")
             {
-                FileStream fileStream = (FileStream)saveFileDialog.OpenFile();
-                FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                FileStream fileStream = (FileStream) saveFileDialog.OpenFile();
+                FileInfo fileInfo = new FileInfo (saveFileDialog.FileName);
                 tbFilename.Text = fileInfo.Name;
                 fileStream.Close();
                 btnGenerate.Enabled = true;
