@@ -60,9 +60,9 @@ namespace TPBuilder
         /// <param name="maxPassenger"></param>
         /// <param name="minMarchandise"></param>
         /// <param name="maxMarchandise"></param>
-        public void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise, string dms)
         {
-            Airport airport = new Airport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise);
+            Airport airport = new Airport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise, dms);
             Airports.Add(airport);
             airportNotifier(airport.ToString());
 
