@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace TPBuilder
 {
@@ -11,10 +12,12 @@ namespace TPBuilder
         public int MaxPassenger { get; set; } //Airport's maximum passenger capacity
         public int MinMarchandise { get; set; } //Airport's minimum marchandise capacity
         public int MaxMarchandise { get; set; } //Airport's maximum marchandise capacity
+        [XmlIgnore]
+        public string DMS { get; set; }
         public List<Aircraft> Aircrafts { get; set; } //List of all the aircraft inside the current airport
 
         public Airport() { }
-        public Airport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public Airport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise, string dms)
         {
             Name = name;
             X = x;
@@ -23,6 +26,7 @@ namespace TPBuilder
             MaxPassenger = maxPassenger;
             MinMarchandise = minMarchandise;
             MaxMarchandise = maxMarchandise;
+            DMS = dms;
             Aircrafts = new List<Aircraft>();
         }
 
@@ -36,7 +40,7 @@ namespace TPBuilder
         }
         public override string ToString()
         {
-            return $"{Name},{X},{Y},{MinPassenger},{MaxPassenger},{MinMarchandise},{MaxPassenger}";
+            return $"{Name},{X},{Y},{MinPassenger},{MaxPassenger},{MinMarchandise},{MaxPassenger}, {DMS}";
         }
     }
 }
