@@ -118,6 +118,11 @@ namespace TPBuilder
             }
 
         }
+        public static void SelectAircraftsAirport(int airportID)
+        {
+            Scenario scenario = Scenario.Instance;
+            scenario.SelectAircraftsAirport(airportID);
+        }
     }
 
 }
