@@ -9,7 +9,13 @@ namespace TPBuilder
     [XmlRoot("Scenario")]
     public class Scenario
     {
-        public List<Airport> Airports { get; set; } // List of all the airport(s) currently in the scenario
+        private List<Airport> airports; // List of all the airport(s) currently in the scenario
+
+        public List<Airport> Airports
+        {
+            get { return this.airports; }
+            set { this.airports = value; }
+        }
         private static Scenario instance = null; //Scenario's intance
         private AircraftFactory aircraftFactory; //Aircraft's factory
         [XmlIgnore]
