@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TPBuilder
@@ -40,7 +41,6 @@ namespace TPBuilder
         public PositionGUI()
         {
             InitializeComponent();
-            pbMap.Image = Properties.Resources.map1;
         }
         private void PositionGUI_Load(object sender, EventArgs e) { }
 
@@ -56,6 +56,13 @@ namespace TPBuilder
             Y = Me.Y;
             DMS = GeoPosition.ConvertToDMS(X, Y, pbMap.Width, pbMap.Height);
             this.Close();
+        }
+
+        private void PbMap_Paint(object sender, PaintEventArgs e)
+        {
+            Bitmap map = new Bitmap(Properties.Resources.map1);
+            e.Graphics.DrawImage(map, 0, 0, 1026, 592);
+
         }
     }
 }
