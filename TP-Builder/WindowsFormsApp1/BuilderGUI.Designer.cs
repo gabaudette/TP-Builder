@@ -114,7 +114,7 @@
             // 
             this.lblMinPassenger.AutoSize = true;
             this.lblMinPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinPassenger.Location = new System.Drawing.Point(220, 4);
+            this.lblMinPassenger.Location = new System.Drawing.Point(161, 7);
             this.lblMinPassenger.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblMinPassenger.Name = "lblMinPassenger";
             this.lblMinPassenger.Size = new System.Drawing.Size(82, 13);
@@ -125,7 +125,7 @@
             // 
             this.lblMaxPassenger.AutoSize = true;
             this.lblMaxPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxPassenger.Location = new System.Drawing.Point(217, 38);
+            this.lblMaxPassenger.Location = new System.Drawing.Point(161, 40);
             this.lblMaxPassenger.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblMaxPassenger.Name = "lblMaxPassenger";
             this.lblMaxPassenger.Size = new System.Drawing.Size(85, 13);
@@ -136,7 +136,7 @@
             // 
             this.lblMinMarchandise.AutoSize = true;
             this.lblMinMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinMarchandise.Location = new System.Drawing.Point(410, 4);
+            this.lblMinMarchandise.Location = new System.Drawing.Point(344, 7);
             this.lblMinMarchandise.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblMinMarchandise.Name = "lblMinMarchandise";
             this.lblMinMarchandise.Size = new System.Drawing.Size(88, 13);
@@ -147,7 +147,7 @@
             // 
             this.lblMaxMarchandise.AutoSize = true;
             this.lblMaxMarchandise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxMarchandise.Location = new System.Drawing.Point(407, 38);
+            this.lblMaxMarchandise.Location = new System.Drawing.Point(347, 45);
             this.lblMaxMarchandise.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblMaxMarchandise.Name = "lblMaxMarchandise";
             this.lblMaxMarchandise.Size = new System.Drawing.Size(91, 13);
@@ -156,7 +156,7 @@
             // 
             // tbAirportName
             // 
-            this.tbAirportName.Location = new System.Drawing.Point(56, 4);
+            this.tbAirportName.Location = new System.Drawing.Point(56, 7);
             this.tbAirportName.Margin = new System.Windows.Forms.Padding(1);
             this.tbAirportName.Name = "tbAirportName";
             this.tbAirportName.Size = new System.Drawing.Size(92, 20);
@@ -164,7 +164,7 @@
             // 
             // tbMinPassenger
             // 
-            this.tbMinPassenger.Location = new System.Drawing.Point(300, 4);
+            this.tbMinPassenger.Location = new System.Drawing.Point(248, 5);
             this.tbMinPassenger.Margin = new System.Windows.Forms.Padding(1);
             this.tbMinPassenger.Name = "tbMinPassenger";
             this.tbMinPassenger.Size = new System.Drawing.Size(92, 20);
@@ -172,7 +172,7 @@
             // 
             // tbMaxPassenger
             // 
-            this.tbMaxPassenger.Location = new System.Drawing.Point(300, 38);
+            this.tbMaxPassenger.Location = new System.Drawing.Point(248, 38);
             this.tbMaxPassenger.Margin = new System.Windows.Forms.Padding(1);
             this.tbMaxPassenger.Name = "tbMaxPassenger";
             this.tbMaxPassenger.Size = new System.Drawing.Size(92, 20);
@@ -180,7 +180,7 @@
             // 
             // tbMinMarchandise
             // 
-            this.tbMinMarchandise.Location = new System.Drawing.Point(494, 4);
+            this.tbMinMarchandise.Location = new System.Drawing.Point(446, 5);
             this.tbMinMarchandise.Margin = new System.Windows.Forms.Padding(1);
             this.tbMinMarchandise.Name = "tbMinMarchandise";
             this.tbMinMarchandise.Size = new System.Drawing.Size(92, 20);
@@ -188,7 +188,7 @@
             // 
             // tbMaxMarchandise
             // 
-            this.tbMaxMarchandise.Location = new System.Drawing.Point(494, 38);
+            this.tbMaxMarchandise.Location = new System.Drawing.Point(446, 38);
             this.tbMaxMarchandise.Margin = new System.Windows.Forms.Padding(1);
             this.tbMaxMarchandise.Name = "tbMaxMarchandise";
             this.tbMaxMarchandise.Size = new System.Drawing.Size(92, 20);
@@ -534,7 +534,7 @@
             this.AirportControlGroup.Location = new System.Drawing.Point(1, 182);
             this.AirportControlGroup.Margin = new System.Windows.Forms.Padding(2);
             this.AirportControlGroup.Name = "AirportControlGroup";
-            this.AirportControlGroup.Size = new System.Drawing.Size(763, 71);
+            this.AirportControlGroup.Size = new System.Drawing.Size(763, 85);
             this.AirportControlGroup.TabIndex = 57;
             // 
             // AircraftControlGroup
