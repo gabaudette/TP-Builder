@@ -3,7 +3,9 @@ using System.Xml.Serialization;
 
 namespace TPBuilder
 {
-
+    public delegate void AirportNotifier(string airport);
+    public delegate void AircraftNotifier(string aircraft);
+    public delegate void SelectionNotifier(string aircraft);
     [XmlRoot("Scenario")]
     public class Scenario
     {
@@ -14,7 +16,9 @@ namespace TPBuilder
         public AirportNotifier airportNotifier { get; set; } // Airport delegate
         [XmlIgnore]
         public AircraftNotifier aircraftNotifier { get; set; } //Aircraft delegate
-
+        [XmlIgnore]
+        public SelectionNotifier selectionNotifier { get; set; } //Selection delegate
+        
         private Scenario()
         {
             Airports = new List<Airport>();
@@ -43,6 +47,7 @@ namespace TPBuilder
         {
             airportNotifier = new AirportNotifier(view.OnAirportCreated);
             aircraftNotifier = new AircraftNotifier(view.OnAircraftCreated);
+            selectionNotifier = new SelectionNotifier(view.OnAirportSelected);
         }
 
         /// <summary>
@@ -169,6 +174,12 @@ namespace TPBuilder
             Aircraft aircraft = AircraftFactory.CreateRescueHelicopter(name, speed, maintenance);
             aircraftNotifier(aircraft.ToString());
             Airports[airportID].AddAircraft(aircraft);
+        }
+
+        public void SelectAircraftsAirport(int airportID)
+        {
+            foreach (Aircraft item in Airports[airportID].Aircrafts)
+                selectionNotifier(item.ToString());
         }
     }
 }
