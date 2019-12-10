@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
-  
+
     public partial class BuilderGUI : Form
     {
         private Scenario scenario; // Scenario
@@ -61,22 +61,23 @@ namespace TPBuilder
         }
         /// <summary>
         /// Add airport button click event
+        /// Bug dont set after reevalidation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnAddAirport_Click(object sender, EventArgs e)
         {
             ValidateAirportInput();
+            if (positionGUI != null)
+            {
                 if (ValidateAirportInput())
                 {
-                    if(positionGUI != null)
-                    { 
-                        ScenarioController.CreateAirport(tbAirportName.Text,positionGUI.X,positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text), positionGUI.DMS);
-                        ResetAirportControls();
-                    }
-                    else
-                        Console.WriteLine("You must set the position of the airport on the map");
+                    ScenarioController.CreateAirport(tbAirportName.Text, positionGUI.X, positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text), positionGUI.DMS);
+                    ResetAirportControls();
                 }
+                else
+                    Console.WriteLine("You must set the position of the airport on the map");
+            }
         }
         /// <summary>
         /// Add aircraft button click event
@@ -338,7 +339,7 @@ namespace TPBuilder
         /// Event that fired when a airport is created
         /// </summary>
         /// <param name="airport"></param>
-        public void OnAirportCreated(string airport)            
+        public void OnAirportCreated(string airport)
         {
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
@@ -427,6 +428,6 @@ namespace TPBuilder
             DeactivateAircraftControl();
         }
 
-        
+
     }
 }
