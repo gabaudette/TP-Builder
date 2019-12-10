@@ -4,21 +4,18 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
-    //TODO : Faire un delegate qui check quand le form se ferme y faut avoir le x pis le y 
-    // pour l'autre form
     public partial class PositionGUI : Form
     {
-        private MouseEventArgs me;
-        private int y;
-        private int x;
-        private string dms;
+        private MouseEventArgs me; // Mouse event args of the map
+        private int y; // Y position of the map
+        private int x; // X position of the map
+        private string dms; // Degree-minute-second notation of X and Y postions
 
         public string DMS
         {
             get { return this.dms; }
             set { this.dms = value; }
         }
-
 
         public MouseEventArgs Me
         {
@@ -45,7 +42,8 @@ namespace TPBuilder
         private void PositionGUI_Load(object sender, EventArgs e) { }
 
         /// <summary>
-        /// 
+        /// Event that fired when you click on the map, 
+        /// it called the DMS conversion and close the current form (map)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,6 +56,11 @@ namespace TPBuilder
             this.Close();
         }
 
+        /// <summary>
+        /// Render the map image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PbMap_Paint(object sender, PaintEventArgs e)
         {
             Bitmap map = new Bitmap(Properties.Resources.map1);
