@@ -85,7 +85,7 @@ namespace TPBuilder
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbWeight.Text));
+                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
                         break;
                     case 1:
                         ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
@@ -195,12 +195,12 @@ namespace TPBuilder
             {
                 //@Aircraft type : Cargo Plane
                 case 0:
-                    tbCapacity.Enabled = false;
+                    tbCapacity.Enabled = true;
                     tbDropTime.Enabled = false;
                     tbLoad.Enabled = true;
                     tbUnload.Enabled = true;
                     tbWaterCapacity.Enabled = false;
-                    tbWeight.Enabled = true;
+                    tbWeight.Enabled = false;
                     break;
                 //@Aircraft type : Passenger Plane
                 case 1:
