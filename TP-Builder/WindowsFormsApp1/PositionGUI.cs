@@ -54,7 +54,7 @@ namespace TPBuilder
             Me = (MouseEventArgs)e;
             X = Me.X;
             Y = Me.Y;
-            DMS = GeoPosition.ConvertToDMS(X, Y);
+            DMS = GeoPosition.ConvertToDMS(X, Y, pbMap.Width, pbMap.Height);
             this.Close();
         }
     }
