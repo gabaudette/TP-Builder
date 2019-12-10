@@ -86,16 +86,21 @@ namespace TPBuilder
         /// <param name="e"></param>
         private void BtnAddAircraft_Click(object sender, EventArgs e)
         {
-            ValidateAircraftInput();
             if (ValidateAircraftInput())
             {
                 switch (cmbAircraftType.SelectedIndex)
                 {
                     case 0:
-                        ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        if ((Regex.IsMatch(tbCapacity.Text, @"^\d+$")))
+                        {
+                            ScenarioController.AddCargoPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        }
                         break;
                     case 1:
-                        ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        if ((Regex.IsMatch(tbCapacity.Text, @"^\d+$")))
+                        {
+                            ScenarioController.AddPassengerPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), Convert.ToInt32(tbLoad.Text), Convert.ToInt32(tbUnload.Text), Convert.ToInt32(tbCapacity.Text));
+                        }
                         break;
                     case 2:
                         ScenarioController.AddObserverPlane(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text));
@@ -107,8 +112,10 @@ namespace TPBuilder
                         ScenarioController.AddWaterBomber(lsvAirport.FocusedItem.Index, tbAircraftName.Text, Convert.ToInt32(tbSpeed.Text), Convert.ToInt32(tbMaintenance.Text), 0, 0);
                         break;
                 }
-                ResetAircraftControls();
+                
             }
+
+            ResetAircraftControls();
         }
         /// <summary>
         /// Front-end validation of all airport's inputs
@@ -190,12 +197,6 @@ namespace TPBuilder
             }
 
             if (!(Regex.IsMatch(tbMaintenance.Text, @"^\d+$")))
-            {
-                Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
-                return false;
-            }
-
-            if (!(Regex.IsMatch(tbCapacity.Text, @"^\d+$")))
             {
                 Console.WriteLine("Validation Error: Aircraft maintenance time value must be numerical");
                 return false;

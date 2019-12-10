@@ -21,13 +21,13 @@ namespace TPBuilder
             double verticalMin = (verticalDegree - Math.Floor(verticalDegree)) * 60;
 
             if ((x < width / 2) && (y < height / 2))
-                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ; S {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} O";
+                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ; N {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} O";
             else if ((x > width / 2) && (y < height / 2))
                 return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ;  N {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} E";
             else if ((x > width / 2) && (y > height / 2))
-                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ;  N {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} O";
+                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ;  S {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} E";
             else
-                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ; S {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} E";
+                return $"{Math.Floor(verticalDegree)}° {Math.Floor(verticalMin)} ; S {Math.Floor(horizontalDegree)}° {Math.Floor(horizontalMin)} O";
         }
     }
 }
