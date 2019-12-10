@@ -29,11 +29,11 @@ namespace TPBuilder
         /// <param name="maxPassenger"></param>
         /// <param name="minMarchandise"></param>
         /// <param name="maxMarchandise"></param>
-        public static void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise)
+        public static void CreateAirport(string name, int x, int y, int minPassenger, int maxPassenger, int minMarchandise, int maxMarchandise, string dms)
         {
             Scenario scenario = Scenario.Instance;
             if (scenario.ValidAirport(name))
-                scenario.CreateAirport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise);
+                scenario.CreateAirport(name, x, y, minPassenger, maxPassenger, minMarchandise, maxMarchandise, dms);
             else
                 Console.WriteLine($"Error : Airport : {name} already exist!");
         }
