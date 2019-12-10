@@ -62,7 +62,6 @@ namespace TPBuilder
         {
             Bitmap map = new Bitmap(Properties.Resources.map1);
             e.Graphics.DrawImage(map, 0, 0, 1026, 592);
-
         }
     }
 }
