@@ -67,8 +67,13 @@ namespace TPBuilder
         {
             if (ValidateAirportInput())
             {
-                ScenarioController.CreateAirport(tbAirportName.Text,positionGUI.X,positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
-                ResetAirportControls();
+                if(positionGUI != null)
+                { 
+                    ScenarioController.CreateAirport(tbAirportName.Text,positionGUI.X,positionGUI.Y, Convert.ToInt32(tbMinPassenger.Text), Convert.ToInt32(tbMaxPassenger.Text), Convert.ToInt32(tbMinMarchandise.Text), Convert.ToInt32(tbMaxMarchandise.Text));
+                    ResetAirportControls();
+                }
+                else
+                    Console.WriteLine("You must set the position of the airport on the map");
             }
         }
         /// <summary>
@@ -118,21 +123,25 @@ namespace TPBuilder
                 Console.WriteLine("Validation Error: Airport name must be between 3 and 50 in length");
                 return false;
             }
+
             if (!Regex.IsMatch(tbMinPassenger.Text, @"^\d$"))
             {
                 Console.WriteLine("Validation Error: Airport minPassenger value must be numerial");
                 return false;
             }
+
             if (!Regex.IsMatch(tbMaxPassenger.Text, @"^\d$"))
             {
                 Console.WriteLine("Validation Error: Airport maxPassenger value must be numerial");
                 return false;
             }
+
             if (!Regex.IsMatch(tbMinMarchandise.Text, @"^\d$"))
             {
                 Console.WriteLine("Validation Error: Airport minMarchandise value must be numerial");
                 return false;
             }
+
             if (!Regex.IsMatch(tbMaxMarchandise.Text, @"^\d$"))
             {
                 Console.WriteLine("Validation Error: Airport maxMarchandise value must be numerial");
@@ -275,6 +284,7 @@ namespace TPBuilder
             positionGUI = new PositionGUI();
             positionGUI.Show();
         }
+
         /// <summary>
         /// Event that check if the combobox aircraft selection changed
         /// </summary>
