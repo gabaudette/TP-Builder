@@ -2,7 +2,7 @@
 
 namespace TPBuilder
 {
-    static class GeoPosition
+    public static class GeoPosition
     {
         /// <summary>
         /// 
