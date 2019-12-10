@@ -42,7 +42,7 @@
         /// <returns></returns>
         public static Aircraft CreatePassengerPlane(string name, int speed, int maintenance, int loadingTime, int unLoadingTime , int capacity)
         {
-            return new CargoPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
+            return new PassengerPlane(name, speed, maintenance, loadingTime, unLoadingTime, capacity);
         }
         /// <summary>
         /// Create a water bomber
