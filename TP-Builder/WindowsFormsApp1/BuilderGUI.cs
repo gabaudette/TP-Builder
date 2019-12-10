@@ -5,8 +5,7 @@ using System.Windows.Forms;
 
 namespace TPBuilder
 {
-    public delegate void AirportNotifier(string airport);
-    public delegate void AircraftNotifier(string aircraft);
+  
     public partial class BuilderGUI : Form
     {
         private Scenario scenario; // Scenario
@@ -20,7 +19,6 @@ namespace TPBuilder
             InitializeComponent();
             scenario = Scenario.Instance;
             setView();
-
         }
 
         private void setView()
@@ -321,7 +319,7 @@ namespace TPBuilder
         /// Event that fired when a airport is created
         /// </summary>
         /// <param name="airport"></param>
-        public void OnAirportCreated(string airport)
+        public void OnAirportCreated(string airport)            
         {
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
@@ -335,6 +333,17 @@ namespace TPBuilder
             string[] aircraftArr = aircraft.Split(',');
             lsvAircraft.Items.Add(new ListViewItem(aircraftArr));
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aircraft"></param>
+        public void OnAirportSelected(string aircraft)
+        {
+            string[] aircraftArr = aircraft.Split(',');
+            lsvAircraft.Items.Add(new ListViewItem(aircraftArr));
+        }
+
         /// <summary>
         /// When a double click is fired on the listview airport item, it unlocked the 
         /// aircraft listview and inputs
@@ -347,6 +356,8 @@ namespace TPBuilder
             ActivateAircraftControl();
             unlockBtn.Visible = true;
             unlockBtn.Enabled = true;
+            lsvAircraft.Items.Clear();
+            ScenarioController.SelectAircraftsAirport(lsvAirport.FocusedItem.Index);
         }
         /// <summary>
         /// Deactivate all airport inputs
@@ -397,5 +408,6 @@ namespace TPBuilder
             DeactivateAircraftControl();
         }
 
+        
     }
 }
