@@ -18,10 +18,10 @@ namespace TPBuilder
         {
             InitializeComponent();
             scenario = Scenario.Instance;
-            setView();
+            SetView();
         }
 
-        private void setView()
+        private void SetView()
         {
             //Airport's listview column setter
             lsvAirport.Columns.Add("Airport Name");
