@@ -59,6 +59,7 @@ namespace TPBuilder
             cmbAircraftType.SelectedIndex = 0;
             CheckAircraftInputType();
         }
+
         /// <summary>
         /// Add airport button click event
         /// Bug dont set after reevalidation
@@ -79,6 +80,7 @@ namespace TPBuilder
                     Console.WriteLine("You must set the position of the airport on the map");
             }
         }
+
         /// <summary>
         /// Add aircraft button click event
         /// </summary>
@@ -117,6 +119,7 @@ namespace TPBuilder
 
             ResetAircraftControls();
         }
+
         /// <summary>
         /// Front-end validation of all airport's inputs
         /// </summary>
@@ -160,6 +163,7 @@ namespace TPBuilder
             }
             return true;
         }
+
         /// <summary>
         /// Front-end validation of all aircraft's inputs
         /// </summary>
@@ -204,6 +208,7 @@ namespace TPBuilder
 
             return true;
         }
+
         /// <summary>
         /// Check the aircraft combobox selected item type
         /// </summary>
@@ -259,6 +264,7 @@ namespace TPBuilder
             }
             ResetAircraftControls();
         }
+
         /// <summary>
         /// Reset all the aircraft's inputs
         /// </summary>
@@ -274,6 +280,7 @@ namespace TPBuilder
             tbWeight.Clear();
             tbDropTime.Clear();
         }
+
         /// <summary>
         /// Reset all the airport's inputs
         /// </summary>
@@ -285,6 +292,7 @@ namespace TPBuilder
             tbMinPassenger.Clear();
             tbMaxPassenger.Clear();
         }
+
         /// <summary>
         /// Button that open the map menu to select a position for the airport
         /// </summary>
@@ -305,6 +313,7 @@ namespace TPBuilder
         {
             CheckAircraftInputType();
         }
+
         /// <summary>
         /// Generate scenario button click event
         /// </summary>
@@ -315,6 +324,7 @@ namespace TPBuilder
             if (tbFilename.Text != "")
                 ScenarioController.Serialize(tbFilename.Text);
         }
+
         /// <summary>
         /// Save scenario file button click event
         /// </summary>
@@ -336,6 +346,7 @@ namespace TPBuilder
                 btnGenerate.Enabled = true;
             }
         }
+
         /// <summary>
         /// Event that fired when a airport is created
         /// </summary>
@@ -345,6 +356,7 @@ namespace TPBuilder
             string[] airportArr = airport.Split(',');
             lsvAirport.Items.Add(new ListViewItem(airportArr));
         }
+
         /// <summary>
         /// Event that fired when a aircraft is created
         /// </summary>
@@ -380,6 +392,7 @@ namespace TPBuilder
             lsvAircraft.Items.Clear();
             ScenarioController.SelectAircraftsAirport(lsvAirport.FocusedItem.Index);
         }
+
         /// <summary>
         /// Deactivate all airport inputs
         /// </summary>
@@ -389,6 +402,7 @@ namespace TPBuilder
             btnAddAirport.Enabled = false;
             AirportControlGroup.Enabled = false;
         }
+
         /// <summary>
         /// Activate all aircraft inputs
         /// </summary>
@@ -398,6 +412,7 @@ namespace TPBuilder
             btnAddAirport.Enabled = true;
             AirportControlGroup.Enabled = true;
         }
+
         /// <summary>
         /// Deactivate all aircraft inputs
         /// </summary>
@@ -407,6 +422,7 @@ namespace TPBuilder
             btnAddAircraft.Enabled = false;
             AircraftControlGroup.Enabled = false;
         }
+
         /// <summary>
         /// Deactivate all aircraft inputs
         /// </summary>
@@ -416,6 +432,7 @@ namespace TPBuilder
             btnAddAircraft.Enabled = true;
             AircraftControlGroup.Enabled = true;
         }
+
         /// <summary>
         /// Activate all aircraft inputs
         /// </summary>
@@ -428,7 +445,5 @@ namespace TPBuilder
             unlockBtn.Enabled = false;
             DeactivateAircraftControl();
         }
-
-
     }
 }
